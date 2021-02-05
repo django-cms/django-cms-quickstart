@@ -12,9 +12,6 @@ jobs:
         os: [
           ubuntu-20.04,
           ubuntu-18.04,
-          ubuntu-16.04,
-          macOS-latest,
-          windows-latest,
         ]
 
     services:
