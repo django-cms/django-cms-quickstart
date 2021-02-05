@@ -8,7 +8,7 @@ This version uses Python 3.8 running and the most up-to-date versions of Django 
 
 You need to have docker installed on your system to run this project.
 
-- [Install Docker] (https://docs.docker.com/engine/install/) here.
+- [Install Docker](https://docs.docker.com/engine/install/) here.
 - If you have not used docker in the past, please read this [introduction on docker](https://docs.docker.com/get-started/) here.
 
 ## Try it
