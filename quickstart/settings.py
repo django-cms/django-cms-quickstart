@@ -66,6 +66,7 @@ INSTALLED_APPS = [
     'djangocms_file',
     'djangocms_icon',
     'djangocms_link',
+    'djangocms_url_manager',
     'djangocms_picture',
     'djangocms_style',
     'djangocms_googlemap',
