@@ -1,4 +1,4 @@
-django>=3.1,<3.2
+django==2.2
 dj-database-url==0.5.0
 django-storage-url==0.5.0
 whitenoise==5.2.0
@@ -9,7 +9,7 @@ psycopg2==2.8.5
 uwsgi==2.0.19.1
 
 # key requirements for django CMS
-django-cms>=3.8,<3.9
+http://github.com/divio/django-cms/tarball/release/4.0.x#egg=django-cms
 django-treebeard>=4.0,<5.0
 django-classy-tags>=2.0
 django-sekizai>=2.0
@@ -20,10 +20,13 @@ pytz
 djangocms-admin-style>=2.0,<3.0
 
 # the default CKEditor - optional, but used in most projects
-djangocms-text-ckeditor>=4.0,<5.0
+https://github.com/divio/djangocms-text-ckeditor/tarball/support/4.0.x#egg=djangocms-text-ckeditor
 
 # some content plugins - optional, but used in most projects
 djangocms-link>=3.0,<4.0
+# FIXME: Replaces djangocms-link, some packages are still sadly dependant ....
+https://github.com/divio/djangocms-url-manager/tarball/master#egg=djangocms-url-manager
+
 djangocms-icon>=2.0,<3.0
 djangocms-style>=3.0,<4.0
 djangocms-googlemap>=2.0,<3.0
@@ -32,7 +35,7 @@ djangocms-file>=3.0,<4.0
 djangocms-picture>=3.0,<4.0
 
 # optional django CMS Bootstrap 4 modules
-djangocms-bootstrap4>=2.0,<3.0
+https://github.com/Aiky30/djangocms-bootstrap4/tarball/feature/cms-4-support#egg=djangocms-bootstrap4
 
 # Django Filer - optional, but used in most projects
 easy_thumbnails
@@ -41,3 +44,6 @@ django-mptt>0.9
 html5lib>=1.0.1
 Pillow>=3.0
 
+# FIXME: Requires an "official" V1 release
+https://github.com/divio/djangocms-versioning/tarball/master#egg=djangocms-versioning
+https://github.com/divio/djangocms-alias/tarball/master#egg=djangocms-alias
