@@ -25,10 +25,6 @@ docker-compose up
 open http://127.0.0.1:8000
 ```
 
-For a more complete how-to guide to this project, see [Deploy a new django CMS project using the Divio quickstart
-repository](https://docs.divio.com/en/latest/how-to/django-cms-deploy-quickstart/) in the [Divio Developer
-Handbook](https://docs.divio.com).
-
 
 ## Customising the project
 
@@ -42,6 +38,7 @@ Options are also available for using Postgres/MySQL, uWSGI/Gunicorn/Guvicorn, et
 
 ## Contribution
 
-This code for this project has been forked from Divio's quickstart repo. We are grateful for their valueable contribution to the code and documentation of this code.
+This code for this project has been forked from Divio's quickstart repo. We are grateful for their valueable contribution to the code and documentation of this code. 
 
-You can follow the original repo [here](https://github.com/divio/django-cms-divio-quickstart/).
+You can follow the original repo [here](https://github.com/divio/django-cms-divio-quickstart/)
+and read their [Divio Developer Handbook](https://docs.divio.com).
