@@ -10,7 +10,7 @@ uwsgi==2.0.19.1
 
 # key requirements for django CMS
 django-cms>=3.9,<4.0
-django-treebeard>=4.0,<5.0
+django-treebeard==4.4
 django-classy-tags>=2.0
 django-sekizai>=2.0
 six
