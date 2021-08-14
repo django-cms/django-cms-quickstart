@@ -25,7 +25,6 @@ docker compose run web python manage.py createsuperuser
 
 Then open http://django-cms-quickstart.127.0.0.1.nip.io:8000 (or just http://127.0.0.1:8000) in your browser.
 
-
 ## Customising the project
 
 This project is ready-to-go without making any changes at all, but also gives you some options.
@@ -49,3 +48,16 @@ See the django-whitenoise settings in settings.py and the `quickstart/templates/
 ## Contribution
 
 Here is the official django CMS repository: [https://github.com/django-cms/django-cms-quickstart/](https://github.com/django-cms/django-cms-quickstart/).
+
+
+## Deployment
+
+Env variables:
+- to deploy this project in testing modus (recommended) set the environment variable `DJANGO_DEBUG` to `True` in your hosting environment. 
+- For production environment instead set the env var `DOMAIN` to the domain that you want the application to run under.
+- If you want the media hosted on S3 set the `DEFAULT_FILE_STORAGE` variable
+
+During deployment the following commands must be executed:
+- `./manage.py collectstatic --noinput`
+- `./manage.py collectstatic --noinput`
+

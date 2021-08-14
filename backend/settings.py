@@ -13,6 +13,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '<a string of random characters>')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG') == "True"
 
+ALLOWED_HOSTS = os.environ.get('DOMAIN')
 if DEBUG:
     ALLOWED_HOSTS = "*"
 
