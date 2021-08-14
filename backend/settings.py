@@ -13,9 +13,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '<a string of random characters>')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG') == "True"
 
-ALLOWED_HOSTS = os.environ.get('DOMAIN')
+ALLOWED_HOSTS = [os.environ.get('DOMAIN'),]
 if DEBUG:
-    ALLOWED_HOSTS = "*"
+    ALLOWED_HOSTS = ["*",]
 
 # Redirect to HTTPS by default, unless explicitly disabled
 SECURE_SSL_REDIRECT = os.environ.get('SECURE_SSL_REDIRECT') != "False"
