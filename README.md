@@ -18,16 +18,12 @@ You need to have docker installed on your system to run this project.
 ```bash
 git clone git@github.com:django-cms/django-cms-quickstart.git
 cd django-cms-quickstart
-docker-compose build
-docker-compose run web python manage.py migrate
-docker-compose run web python manage.py createsuperuser
-docker-compose up
-open http://127.0.0.1:8000
+docker compose up --force-recreate --build -d
+docker compose run web python manage.py migrate
+docker compose run web python manage.py createsuperuser
 ```
 
-For a more complete how-to guide to this project, see [Deploy a new django CMS project using the Divio quickstart
-repository](https://docs.divio.com/en/latest/how-to/django-cms-deploy-quickstart/) in the [Divio Developer
-Handbook](https://docs.divio.com).
+Then open http://django-cms-quickstart.127.0.0.1.nip.io:8000 (or just http://127.0.0.1:8000) in your browser.
 
 
 ## Customising the project
@@ -40,8 +36,16 @@ see sections that can be removed - in each case, the section is noted with a com
 
 Options are also available for using Postgres/MySQL, uWSGI/Gunicorn/Guvicorn, etc.
 
+## Features
+
+### Static Files with Whitenoise
+
+This quickstart demo has a cloud-ready static files setup via django-whitenoise.
+
+In the containerized cloud the application is not served by a web server like nginx but directly through uwsgi. django-whitenoise is the glue that's needed to serve static files in your application directly through uwsgi.
+
+See the django-whitenoise settings in settings.py and the `quickstart/templates/whitenoise-static-files-demo.html` demo page template that serves a static file.
+
 ## Contribution
 
-This code for this project has been forked from Divio's quickstart repo. We are grateful for their valueable contribution to the code and documentation of this code.
-
-You can follow the original repo [here](https://github.com/divio/django-cms-divio-quickstart/).
+Here is the official django CMS repository: [https://github.com/django-cms/django-cms-quickstart/](https://github.com/django-cms/django-cms-quickstart/).

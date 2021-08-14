@@ -13,13 +13,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '<a string of random characters>')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG') == "True"
 
-DIVIO_DOMAIN = os.environ.get('DOMAIN', '')
-DIVIO_DOMAIN_ALIASES = [
-    d.strip()
-    for d in os.environ.get('DOMAIN_ALIASES', '').split(',')
-    if d.strip()
-]
-ALLOWED_HOSTS = [DIVIO_DOMAIN] + DIVIO_DOMAIN_ALIASES
+if DEBUG:
+    ALLOWED_HOSTS = "*"
 
 # Redirect to HTTPS by default, unless explicitly disabled
 SECURE_SSL_REDIRECT = os.environ.get('SECURE_SSL_REDIRECT') != "False"
@@ -40,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',  # http://whitenoise.evans.io/en/stable/django.html#using-whitenoise-in-development
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
@@ -129,6 +125,7 @@ TEMPLATES = [
 CMS_TEMPLATES = [
     # a minimal template to get started with
     ('minimal.html', 'Minimal template'),
+    ('whitenoise-static-files-demo.html', 'Static File Demo'),
 
     # optional templates that extend base.html, to be used with Bootstrap 4
     ('page.html', 'Page'),
