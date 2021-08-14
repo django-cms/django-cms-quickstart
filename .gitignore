@@ -18,3 +18,5 @@ db.sqlite3
 ._*
 .Spotlight-V100
 .Trashes
+
+.idea/
