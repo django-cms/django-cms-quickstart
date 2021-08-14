@@ -52,12 +52,15 @@ Here is the official django CMS repository: [https://github.com/django-cms/djang
 
 ## Deployment
 
-Env variables:
-- to deploy this project in testing modus (recommended) set the environment variable `DJANGO_DEBUG` to `True` in your hosting environment. 
-- For production environment instead set the env var `DOMAIN` to the domain that you want the application to run under.
-- If you want the media hosted on S3 set the `DEFAULT_FILE_STORAGE` variable
+Note that this is just a demo project to get you started. If you want a full production ready site with all the bells and whistles we recommend you have a look at https://github.com/django-cms/djangocms-template instead.
 
-During deployment the following commands must be executed:
-- `./manage.py collectstatic --noinput`
+#### Env variables
+- to deploy this project in testing modus (recommended) set the environment variable `DJANGO_DEBUG` to `True` in your hosting environment. 
+- For production environment (if `DEBUG` is false) django requires you to whitelist the domain. Set the env var `DOMAIN` to the host, i.e. `www.domain.com` or `*.domain.com`.
+- If you want the media hosted on S3 set the `DEFAULT_FILE_STORAGE` variable accordingly.
+
+#### Deployment Commands
+Configure your hosting environment to run the following commands on every deployment:
+- `./manage.py migrate`
 - `./manage.py collectstatic --noinput`
 
