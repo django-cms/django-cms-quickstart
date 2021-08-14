@@ -55,7 +55,7 @@ Here is the official django CMS repository: [https://github.com/django-cms/djang
 Note that this is just a demo project to get you started. If you want a full production ready site with all the bells and whistles we recommend you have a look at https://github.com/django-cms/djangocms-template instead.
 
 #### Env variables
-- to deploy this project in testing modus (recommended) set the environment variable `DJANGO_DEBUG` to `True` in your hosting environment. 
+- to deploy this project in testing modus (recommended) set the environment variable `DEBUG` to `True` in your hosting environment. 
 - For production environment (if `DEBUG` is false) django requires you to whitelist the domain. Set the env var `DOMAIN` to the host, i.e. `www.domain.com` or `*.domain.com`.
 - If you want the media hosted on S3 set the `DEFAULT_FILE_STORAGE` variable accordingly.
 
