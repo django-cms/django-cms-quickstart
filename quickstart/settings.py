@@ -141,20 +141,7 @@ WSGI_APPLICATION = 'quickstart.wsgi.application'
 # Configure database using DATABASE_URL; fall back to sqlite in memory when no
 # environment variable is available, e.g. during Docker build
 DATABASE_URL = os.environ.get('DATABASE_URL', 'sqlite://:memory:')
-
-if not os.environ.get('CI', False):
-    DATABASES = {'default': dj_database_url.parse(DATABASE_URL)}
-else:
-    DATABASES = {
-        'default': {
-           'ENGINE': 'django.db.backends.postgresql',
-           'NAME': 'postgres',
-           'USER': 'postgres',
-           'PASSWORD': 'postgres',
-           'HOST': '127.0.0.1',
-           'PORT': '5432',
-        }
-    }
+DATABASES = {'default': dj_database_url.parse(DATABASE_URL)}
 
 
 # Password validation
