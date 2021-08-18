@@ -62,5 +62,8 @@ Note that this is just a demo project to get you started. If you want a full pro
 #### Deployment Commands
 Configure your hosting environment to run the following commands on every deployment:
 - `./manage.py migrate`
-- `./manage.py collectstatic --noinput`
 
+
+#### Divio Deployment
+
+divio.com is a cloud hosting platform optimized for django web applications. It's the quickest way to deploy this project. Here is a [video tutorial](https://www.youtube.com/watch?v=O2g5Wfoyp7Q) and a [description of the deployment steps](https://github.com/django-cms/djangocms-template/blob/mco-standalone/docs/deployment-divio.md#divio-project-setup) that are mostly applicable for this quickstart project.
