@@ -30,13 +30,8 @@ djangocms-video>=3.0,<4.0
 djangocms-file>=3.0,<4.0
 djangocms-picture>=3.0,<4.0
 
-# optional django CMS Bootstrap 4 modules
-djangocms-bootstrap4>=2.0,<3.0
+# optional django CMS Bootstrap 5 modules (alpha) - requires BS5 frontend setup in the templates
+https://github.com/gl-agnx/djangocms-bootstrap5/archive/refs/heads/master.zip#egg=djangocms_bootstrap5
 
-# Django Filer - optional, but used in most projects
-easy_thumbnails
-django-filer>=1.3
-django-mptt>0.9
-html5lib>=1.0.1
-Pillow>=3.0
-
+# Django Filer - optional, but used in most projects (alpha)
+https://github.com/django-cms/django-filer/archive/refs/tags/2.1rc4.zip#egg=django-filer
