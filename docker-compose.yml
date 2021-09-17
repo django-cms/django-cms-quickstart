@@ -20,8 +20,11 @@ services:
   database_default:
     # Select one of the following db configurations for the database
     image: postgres:9.6-alpine
+    ports:
+      - "5432:5432"  # allow your local dev env to connect to the db
     environment:
       POSTGRES_DB: "db"
+      POSTGRES_PASSWORD: "password"
       POSTGRES_HOST_AUTH_METHOD: "trust"
       SERVICE_MANAGER: "fsm-postgres"
     volumes:
