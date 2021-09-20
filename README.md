@@ -18,7 +18,7 @@ You need to have docker installed on your system to run this project.
 ```bash
 git clone git@github.com:django-cms/django-cms-quickstart.git
 cd django-cms-quickstart
-docker compose up --force-recreate --build -d
+docker compose up --build -d
 docker compose run web python manage.py migrate
 docker compose run web python manage.py createsuperuser
 ```
