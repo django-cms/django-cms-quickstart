@@ -18,9 +18,9 @@ You need to have docker installed on your system to run this project.
 ```bash
 git clone git@github.com:django-cms/django-cms-quickstart.git
 cd django-cms-quickstart
-docker compose up --build -d
-docker compose run web python manage.py migrate
-docker compose run web python manage.py createsuperuser
+docker-compose up --build -d
+docker-compose run web python manage.py migrate
+docker-compose run web python manage.py createsuperuser
 ```
 
 Then open http://django-cms-quickstart.127.0.0.1.nip.io:8000 (or just http://127.0.0.1:8000) in your browser.
