@@ -50,6 +50,12 @@ INSTALLED_APPS = [
     'filer',
     'easy_thumbnails',
 
+    # the default publishing implementation - optional, but used in most projects
+    'djangocms_versioning',
+
+    # the default alias content - optional, but used in most projects
+    'djangocms_alias',
+    
     # the default CKEditor - optional, but used in most projects
     'djangocms_text_ckeditor',
 
@@ -57,6 +63,7 @@ INSTALLED_APPS = [
     'djangocms_file',
     'djangocms_icon',
     'djangocms_link',
+    'djangocms_url_manager',
     'djangocms_picture',
     'djangocms_style',
     'djangocms_googlemap',
