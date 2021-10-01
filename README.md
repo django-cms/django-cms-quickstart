@@ -37,6 +37,10 @@ see sections that can be removed - in each case, the section is noted with a com
 
 Options are also available for using Postgres/MySQL, uWSGI/Gunicorn/Guvicorn, etc.
 
+#### Updating requirements
+
+The project uses a 2 step approach, freezing all dependencies with pip-tools. Read more about how to handle it here: https://blog.typodrive.com/2020/02/04/always-freeze-requirements-with-pip-compile-to-avoid-unpleasant-surprises/
+
 ## Features
 
 ### Static Files with Whitenoise
