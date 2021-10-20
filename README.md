@@ -6,7 +6,9 @@ A Dockerised django CMS project, ready to deploy on [Divio](https://www.divio.co
 
 This version uses Python 3.8 running and the most up-to-date versions of Django 3.1 and django CMS 3.8.
 
-This project is endorsed by the django CMS Association. That means that it is officially accepted by the dCA as being in line with our roadmap vision and development/plugin policy. Join us on Slack.
+.. note:: 
+
+    This project is considered 3rd party (no supervision by the `django CMS Association <https://www.django-cms.org/en/about-us/>`_). Join us on `Slack                 <https://www.django-cms.org/slack/>`_ for more information.
 
 ## Installation
 
