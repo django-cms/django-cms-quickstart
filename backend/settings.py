@@ -62,22 +62,22 @@ INSTALLED_APPS = [
     'djangocms_googlemap',
     'djangocms_video',
 
-    # optional django CMS Bootstrap 5 modules
-    'djangocms_bootstrap5',
-    'djangocms_bootstrap5.contrib.bootstrap5_alerts',
-    'djangocms_bootstrap5.contrib.bootstrap5_badge',
-    'djangocms_bootstrap5.contrib.bootstrap5_card',
-    'djangocms_bootstrap5.contrib.bootstrap5_carousel',
-    'djangocms_bootstrap5.contrib.bootstrap5_collapse',
-    'djangocms_bootstrap5.contrib.bootstrap5_content',
-    'djangocms_bootstrap5.contrib.bootstrap5_grid',
-    'djangocms_bootstrap5.contrib.bootstrap5_jumbotron',
-    'djangocms_bootstrap5.contrib.bootstrap5_link',
-    'djangocms_bootstrap5.contrib.bootstrap5_listgroup',
-    'djangocms_bootstrap5.contrib.bootstrap5_media',
-    'djangocms_bootstrap5.contrib.bootstrap5_picture',
-    'djangocms_bootstrap5.contrib.bootstrap5_tabs',
-    'djangocms_bootstrap5.contrib.bootstrap5_utilities',
+    # optional django CMS Bootstrap 4 modules
+    'djangocms_bootstrap4',
+    'djangocms_bootstrap4.contrib.bootstrap4_alerts',
+    'djangocms_bootstrap4.contrib.bootstrap4_badge',
+    'djangocms_bootstrap4.contrib.bootstrap4_card',
+    'djangocms_bootstrap4.contrib.bootstrap4_carousel',
+    'djangocms_bootstrap4.contrib.bootstrap4_collapse',
+    'djangocms_bootstrap4.contrib.bootstrap4_content',
+    'djangocms_bootstrap4.contrib.bootstrap4_grid',
+    'djangocms_bootstrap4.contrib.bootstrap4_jumbotron',
+    'djangocms_bootstrap4.contrib.bootstrap4_link',
+    'djangocms_bootstrap4.contrib.bootstrap4_listgroup',
+    'djangocms_bootstrap4.contrib.bootstrap4_media',
+    'djangocms_bootstrap4.contrib.bootstrap4_picture',
+    'djangocms_bootstrap4.contrib.bootstrap4_tabs',
+    'djangocms_bootstrap4.contrib.bootstrap4_utilities',
 ]
 
 MIDDLEWARE = [
@@ -129,8 +129,8 @@ CMS_TEMPLATES = [
     ('whitenoise-static-files-demo.html', 'Static File Demo'),
 
     # optional templates that extend base.html, to be used with Bootstrap 5
-    ('page.html', 'Bootstrap5 Demo'),
-    ('feature.html', 'Bootstrap5 Demo with two placeholders')
+    ('page.html', 'Bootstrap 4 Demo'),
+    ('feature.html', 'Bootstrap 4 Demo with two placeholders')
 ]
 
 WSGI_APPLICATION = 'backend.wsgi.application'
