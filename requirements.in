@@ -1,0 +1,54 @@
+# Compile this file for changes to take effect:
+# pip-compile requirements.in >> requirements.txt
+
+
+django<3.2  # 3.2 has dark admin theme which looks bad in custom django CMS admin views
+dj-database-url==0.5.0
+django-storage-url==0.5.0
+whitenoise==5.2.0
+boto3==1.14.49
+
+psycopg2==2.8.5
+
+uwsgi==2.0.19.1
+
+# key requirements for django CMS
+http://github.com/django-cms/django-cms/tarball/release/4.0.x#egg=django-cms
+https://github.com/divio/djangocms-versioning/tarball/master#egg=djangocms-versioning  # FIXME: Requires an "official" V1 release
+https://github.com/divio/djangocms-alias/tarball/master#egg=djangocms-alias  # FIXME: Requires an "official" V1 release
+django-treebeard>=4.0,<5.0
+django-classy-tags>=2.0
+django-sekizai>=2.0
+six
+pytz
+
+# optional, but used in most projects
+djangocms-admin-style>=2.0,<3.0
+
+# the default CKEditor - optional, but used in most projects
+https://github.com/django-cms/djangocms-text-ckeditor/tarball/support/4.0.x#egg=djangocms-text-ckeditor
+
+# some content plugins - optional, but used in most projects
+
+# some content plugins - optional, but used in most projects
+djangocms-link>=3.0,<4.0
+# FIXME: Replaces djangocms-link, some packages are still sadly dependant ....
+https://github.com/divio/djangocms-url-manager/tarball/master#egg=djangocms-url-manager
+
+djangocms-icon>=2.0,<3.0
+djangocms-style>=3.0,<4.0
+djangocms-googlemap>=2.0,<3.0
+djangocms-video>=3.0,<4.0
+djangocms-file>=3.0,<4.0
+
+
+# optional django CMS Bootstrap 4 modules
+djangocms-bootstrap4>=2.0,<3.0
+# optional django CMS Bootstrap 5 modules (alpha) - requires BS5 frontend setup in the templates
+# as of Q4 2021 there are still basic issues with djangocms-bootstrap5
+# https://github.com/gl-agnx/djangocms-bootstrap5/archive/refs/heads/master.zip#egg=djangocms_bootstrap5
+
+# Django Filer - optional, but used in most projects (alpha)
+https://github.com/django-cms/django-filer/archive/refs/tags/2.1rc4.zip#egg=django-filer
+
+pip-tools  # needed for compilation of this file into requirements.txt, see start of file
