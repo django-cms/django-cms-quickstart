@@ -7,13 +7,19 @@ The `main` branch has [some changes from the original remote](https://github.com
 <details>
 <summary>For PR Author</summary>
 
-Replace all instances of "____" with the name of your plugin.
+Replace __all__ instances of "____" with the name of your plugin.
+
+Replace __all__ instances of "0000" with the ID of the JIRA issue.
 
 </details>
 
 ### Overview
 
 TACC-specific plugin for Django CMS: Core-CMS-Plugin-_____
+
+### Issue
+
+[FP-0000](https://jira.tacc.utexas.edu/browse/FP-0000)
 
 ### Testing Steps
 
