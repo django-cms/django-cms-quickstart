@@ -4,11 +4,20 @@
 The `main` branch has [some changes from the original remote](https://github.com/django-cms/django-cms-quickstart/compare/main...tacc-wbomar:main).
 
 </details>
+<details>
+<summary>For PR Author</summary>
+
+Replace all instances of "____" with the name of your plugin.
+
+</details>
 
 ### Overview
 
-Proof of concept installation of TACC-specific plugin for Django CMS.
+TACC-specific plugin for Django CMS: Core-CMS-Plugin-_____
 
-### Plugin
+### Testing Steps
 
-https://github.com/TACC/Core-CMS-Plugin-…
+1. Checkout this PR's branch.
+2. Follow [How to Test Plugin](https://github.com/tacc-wbomar/django-cms-quickstart/wiki/How-to-Test-Plugin).
+3. Test plugin Usage & Features:
+    https://github.com/TACC/Core-CMS-Plugin-_____#usage
