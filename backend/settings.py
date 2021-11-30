@@ -78,6 +78,9 @@ INSTALLED_APPS = [
     'djangocms_bootstrap4.contrib.bootstrap4_picture',
     'djangocms_bootstrap4.contrib.bootstrap4_tabs',
     'djangocms_bootstrap4.contrib.bootstrap4_utilities',
+
+    # standard TACC CMS plugins
+    # 'djangocms_tacc_…',
 ]
 
 MIDDLEWARE = [

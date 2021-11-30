@@ -41,6 +41,9 @@ djangocms-bootstrap4>=2.0,<3.0
 # as of Q4 2021 there are still basic issues with djangocms-bootstrap5
 # https://github.com/gl-agnx/djangocms-bootstrap5/archive/refs/heads/master.zip#egg=djangocms_bootstrap5
 
+# standard TACC CMS plugins
+# git+http://git@github.com/TACC/Core-CMS-Plugin-….git#egg=djangocms-tacc-…
+
 # Django Filer - optional, but used in most projects (alpha)
 https://github.com/django-cms/django-filer/archive/refs/tags/2.1.1.zip#egg=django-filer
 
