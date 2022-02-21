@@ -44,6 +44,7 @@ django-cms @ http://github.com/django-cms/django-cms/tarball/release/4.0.x
     #   djangocms-link
     #   djangocms-picture
     #   djangocms-style
+    #   djangocms-text-ckeditor
     #   djangocms-url-manager
     #   djangocms-versioning
     #   djangocms-video
@@ -100,10 +101,8 @@ djangocms-picture==3.0.0
     # via djangocms-bootstrap4
 djangocms-style==3.0.0
     # via -r requirements.in
-djangocms-text-ckeditor @ https://github.com/django-cms/djangocms-text-ckeditor/tarball/support/4.0.x
-    # via
-    #   -r requirements.in
-    #   djangocms-bootstrap4
+djangocms-text-ckeditor==4.0.0
+    # via djangocms-bootstrap4
 djangocms-url-manager @ https://github.com/divio/djangocms-url-manager/tarball/master
     # via -r requirements.in
 djangocms-versioning @ https://github.com/divio/djangocms-versioning/tarball/master
@@ -116,6 +115,8 @@ easy-thumbnails==2.8rc1
     # via djangocms-picture
 furl==2.1.3
     # via django-storage-url
+html5lib==1.1
+    # via djangocms-text-ckeditor
 jmespath==0.10.0
     # via
     #   boto3
@@ -128,6 +129,7 @@ pep517==0.12.0
     # via pip-tools
 pillow==8.4.0
     # via
+    #   djangocms-text-ckeditor
     #   easy-thumbnails
     #   reportlab
 pip-tools==6.4.0
@@ -150,6 +152,7 @@ six==1.16.0
     # via
     #   -r requirements.in
     #   furl
+    #   html5lib
     #   orderedmultidict
     #   python-dateutil
 sqlparse==0.4.2
@@ -169,6 +172,7 @@ uwsgi==2.0.19.1
 webencodings==0.5.1
     # via
     #   cssselect2
+    #   html5lib
     #   tinycss2
 wheel==0.37.0
     # via pip-tools

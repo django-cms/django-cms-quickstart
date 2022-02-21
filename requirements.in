@@ -26,7 +26,7 @@ pytz
 djangocms-admin-style>=2.0,<3.0
 
 # the default CKEditor - optional, but used in most projects
-https://github.com/django-cms/djangocms-text-ckeditor/tarball/support/4.0.x#egg=djangocms-text-ckeditor
+https://github.com/django-cms/django-cms/archive/refs/heads/develop-4.zip#egg=djangocms-text-ckeditor
 
 # some content plugins - optional, but used in most projects
 
