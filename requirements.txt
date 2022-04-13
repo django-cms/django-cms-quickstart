@@ -33,7 +33,7 @@ django-classy-tags==2.0.0
     #   -r requirements.in
     #   django-cms
     #   django-sekizai
-django-cms==3.9.0
+django-cms==3.10.0
     # via
     #   -r requirements.in
     #   djangocms-attributes-field
@@ -67,7 +67,7 @@ django-storages==1.11.1
     # via django-storage-url
 django-treebeard==4.5.1
     # via django-cms
-djangocms-admin-style==2.0.2
+djangocms-admin-style==3.1.1
     # via
     #   -r requirements.in
     #   django-cms
