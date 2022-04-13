@@ -18,7 +18,7 @@ cssselect2==0.4.1
     # via svglib
 dj-database-url==0.5.0
     # via -r requirements.in
-django==3.1.13
+django==3.2.13
     # via
     #   -r requirements.in
     #   django-classy-tags
