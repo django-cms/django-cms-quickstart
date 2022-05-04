@@ -21,7 +21,7 @@ services:
 
   database_default:
     # Select one of the following db configurations for the database
-    image: postgres:9.6-alpine
+    image: postgres:13.5-alpine
     ports:
       - "5432:5432/tcp"  # allow your local dev env to connect to the db
     environment:
