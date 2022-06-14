@@ -1,54 +1,37 @@
 # Compile this file for changes to take effect:
 # pip-compile requirements.in >> requirements.txt
 
+boto3
+psycopg2
+uwsgi
 
-django<3.2  # 3.2 has dark admin theme which looks bad in custom django CMS admin views
-dj-database-url==0.5.0
-django-storage-url==0.5.0
-whitenoise==5.2.0
-boto3==1.14.49
-
-psycopg2==2.8.5
-
-uwsgi==2.0.19.1
+django<4  # django CMS 4 doesn't yet support django 4.x and 3.x is the LTS version
+dj-database-url
+django-storage-url
+whitenoise
+easy-thumbnails
 
 # key requirements for django CMS
-http://github.com/django-cms/django-cms/tarball/release/4.0.x#egg=django-cms
-https://github.com/divio/djangocms-versioning/tarball/master#egg=djangocms-versioning  # FIXME: Requires an "official" V1 release
-https://github.com/divio/djangocms-alias/tarball/master#egg=djangocms-alias  # FIXME: Requires an "official" V1 release
-django-treebeard>=4.0,<5.0
-django-classy-tags>=2.0
-django-sekizai>=2.0
-six
-pytz
+https://github.com/django-cms/django-cms/archive/refs/heads/release/4.0.1.x.zip#egg=django-cms
+https://github.com/divio/djangocms-versioning/tarball/master#egg=djangocms-versioning
+https://github.com/divio/djangocms-alias/tarball/master#egg=djangocms-alias
+djangocms-picture
 
 # optional, but used in most projects
-djangocms-admin-style>=2.0,<3.0
+djangocms-admin-style
 
 # the default CKEditor - optional, but used in most projects
-https://github.com/django-cms/django-cms/archive/refs/heads/develop-4.zip#egg=djangocms-text-ckeditor
+https://github.com/django-cms/djangocms-text-ckeditor/archive/refs/heads/support/4.0.x.zip#egg=djangocms-text-ckeditor
 
-# some content plugins - optional, but used in most projects
-
-# some content plugins - optional, but used in most projects
-djangocms-link>=3.0,<4.0
-# FIXME: Replaces djangocms-link, some packages are still sadly dependant ....
+# Replaces djangocms-link
 https://github.com/divio/djangocms-url-manager/tarball/master#egg=djangocms-url-manager
-
-djangocms-icon>=2.0,<3.0
-djangocms-style>=3.0,<4.0
-djangocms-googlemap>=2.0,<3.0
-djangocms-video>=3.0,<4.0
-djangocms-file>=3.0,<4.0
 
 
 # optional django CMS Bootstrap 4 modules
-djangocms-bootstrap4>=2.0,<3.0
-# optional django CMS Bootstrap 5 modules (alpha) - requires BS5 frontend setup in the templates
-# as of Q4 2021 there are still basic issues with djangocms-bootstrap5
-# https://github.com/gl-agnx/djangocms-bootstrap5/archive/refs/heads/master.zip#egg=djangocms_bootstrap5
+https://github.com/django-cms/djangocms-bootstrap4/archive/refs/heads/support/django-cms-4.0.x.zip
 
-# Django Filer - optional, but used in most projects (alpha)
-https://github.com/django-cms/django-filer/archive/refs/tags/2.1rc4.zip#egg=django-filer
+
+django-filer
+
 
 pip-tools  # needed for compilation of this file into requirements.txt, see start of file

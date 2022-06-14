@@ -29,6 +29,8 @@ docker compose up -d
 
 Then open http://django-cms-quickstart.127.0.0.1.nip.io:8000 (or just http://127.0.0.1:8000) in your browser.
 
+Note: Since Compose V2, `docker-compose` is now included inside docker. For more information, checkout the [Compose V2](https://docs.docker.com/compose/cli-command/) Documentation.
+
 ## Customising the project
 
 This project is ready-to-go without making any changes at all, but also gives you some options.

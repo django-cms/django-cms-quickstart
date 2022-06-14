@@ -55,31 +55,25 @@ INSTALLED_APPS = [
 
     # the default alias content - optional, but used in most projects
     'djangocms_alias',
-    
+
     # the default CKEditor - optional, but used in most projects
     'djangocms_text_ckeditor',
 
-    # some content plugins - optional, but used in most projects
-    'djangocms_file',
-    'djangocms_icon',
-    'djangocms_link',
     'djangocms_url_manager',
+
     'djangocms_picture',
-    'djangocms_style',
-    'djangocms_googlemap',
-    'djangocms_video',
 
     # optional django CMS Bootstrap 4 modules
     'djangocms_bootstrap4',
     'djangocms_bootstrap4.contrib.bootstrap4_alerts',
     'djangocms_bootstrap4.contrib.bootstrap4_badge',
     'djangocms_bootstrap4.contrib.bootstrap4_card',
-    'djangocms_bootstrap4.contrib.bootstrap4_carousel',
+    # 'djangocms_bootstrap4.contrib.bootstrap4_carousel',  # TODO: remove hard-coded dependance on djangocms_link
     'djangocms_bootstrap4.contrib.bootstrap4_collapse',
     'djangocms_bootstrap4.contrib.bootstrap4_content',
     'djangocms_bootstrap4.contrib.bootstrap4_grid',
     'djangocms_bootstrap4.contrib.bootstrap4_jumbotron',
-    'djangocms_bootstrap4.contrib.bootstrap4_link',
+    # 'djangocms_bootstrap4.contrib.bootstrap4_link',  # TODO: remove hard-coded dependance on djangocms_link
     'djangocms_bootstrap4.contrib.bootstrap4_listgroup',
     'djangocms_bootstrap4.contrib.bootstrap4_media',
     'djangocms_bootstrap4.contrib.bootstrap4_picture',
@@ -215,3 +209,5 @@ MEDIA_ROOT = os.path.join('/data/media/')
 
 
 SITE_ID = 1
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
