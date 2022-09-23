@@ -55,6 +55,7 @@ INSTALLED_APPS = [
 
     # the default alias content - optional, but used in most projects
     'djangocms_alias',
+    'parler',
 
     # the default CKEditor - optional, but used in most projects
     'djangocms_text_ckeditor',
