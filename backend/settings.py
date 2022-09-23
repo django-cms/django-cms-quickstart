@@ -64,21 +64,22 @@ INSTALLED_APPS = [
     'djangocms_picture',
 
     # optional django CMS Bootstrap 4 modules
-    'djangocms_bootstrap4',
-    'djangocms_bootstrap4.contrib.bootstrap4_alerts',
-    'djangocms_bootstrap4.contrib.bootstrap4_badge',
-    'djangocms_bootstrap4.contrib.bootstrap4_card',
-    # 'djangocms_bootstrap4.contrib.bootstrap4_carousel',  # TODO: remove hard-coded dependance on djangocms_link
-    'djangocms_bootstrap4.contrib.bootstrap4_collapse',
-    'djangocms_bootstrap4.contrib.bootstrap4_content',
-    'djangocms_bootstrap4.contrib.bootstrap4_grid',
-    'djangocms_bootstrap4.contrib.bootstrap4_jumbotron',
-    # 'djangocms_bootstrap4.contrib.bootstrap4_link',  # TODO: remove hard-coded dependance on djangocms_link
-    'djangocms_bootstrap4.contrib.bootstrap4_listgroup',
-    'djangocms_bootstrap4.contrib.bootstrap4_media',
-    'djangocms_bootstrap4.contrib.bootstrap4_picture',
-    'djangocms_bootstrap4.contrib.bootstrap4_tabs',
-    'djangocms_bootstrap4.contrib.bootstrap4_utilities',
+    'djangocms_frontend',
+    'djangocms_frontend.contrib.accordion',
+    'djangocms_frontend.contrib.alert',
+    'djangocms_frontend.contrib.badge',
+    'djangocms_frontend.contrib.card',
+    'djangocms_frontend.contrib.carousel',
+    'djangocms_frontend.contrib.collapse',
+    'djangocms_frontend.contrib.content',
+    'djangocms_frontend.contrib.grid',
+    'djangocms_frontend.contrib.jumbotron',
+    'djangocms_frontend.contrib.link',
+    'djangocms_frontend.contrib.listgroup',
+    'djangocms_frontend.contrib.media',
+    'djangocms_frontend.contrib.image',
+    'djangocms_frontend.contrib.tabs',
+    'djangocms_frontend.contrib.utilities',
 ]
 
 MIDDLEWARE = [
@@ -124,14 +125,22 @@ TEMPLATES = [
     },
 ]
 
+THUMBNAIL_PROCESSORS = (
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    #'easy_thumbnails.processors.scale_and_crop',
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.filters',
+)
+
 CMS_TEMPLATES = [
     # a minimal template to get started with
     ('minimal.html', 'Minimal template'),
-    ('whitenoise-static-files-demo.html', 'Static File Demo'),
 
     # optional templates that extend base.html, to be used with Bootstrap 5
-    ('page.html', 'Bootstrap 4 Demo'),
-    ('feature.html', 'Bootstrap 4 Demo with two placeholders')
+    ('bootstrap5.html', 'Bootstrap 5 Demo'),
+
+    ('whitenoise-static-files-demo.html', 'Static File Demo'),
 ]
 
 WSGI_APPLICATION = 'backend.wsgi.application'

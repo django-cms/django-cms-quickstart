@@ -27,9 +27,8 @@ https://github.com/django-cms/djangocms-text-ckeditor/archive/refs/heads/support
 https://github.com/divio/djangocms-url-manager/tarball/master#egg=djangocms-url-manager
 
 
-# optional django CMS Bootstrap 4 modules
-https://github.com/django-cms/djangocms-bootstrap4/archive/refs/heads/support/django-cms-4.0.x.zip
-
+# optional django CMS frontend
+djangocms-frontend
 
 django-filer
 
