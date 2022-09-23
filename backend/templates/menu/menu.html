@@ -1,0 +1,13 @@
+{% load i18n menu_tags cache %}{% spaceless %}
+    {% for child in children %}
+        <li class="nav-item text-center {% if child.ancestor %}ancestor{% endif %}{% if child.children %} dropdown{% endif %}">
+            {% if child.children %}<a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" href="{{ child.get_absolute_url }}" id="menu-{{ child.id|safe }}">{{ child.get_menu_title }}</a>
+                <div class="dropdown-menu" aria-labelledby="menu-{{ child.ancestor.id|safe }}">
+                    {% show_menu from_level to_level extra_inactive extra_active "menu/dropdown.html" "" "" child %}
+                </div>
+            {% else %}
+                <a class="nav-link{% if child.selected %} active{% endif %}" href="{{ child.get_absolute_url }}"><span>{{ child.get_menu_title }}</span></a>
+            {% endif %}
+        </li>
+    {% endfor %}
+{% endspaceless %}

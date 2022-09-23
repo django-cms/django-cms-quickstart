@@ -56,28 +56,28 @@ INSTALLED_APPS = [
     # some content plugins - optional, but used in most projects
     'djangocms_file',
     'djangocms_icon',
-    'djangocms_link',
     'djangocms_picture',
     'djangocms_style',
     'djangocms_googlemap',
     'djangocms_video',
 
-    # optional django CMS Bootstrap 4 modules
-    'djangocms_bootstrap4',
-    'djangocms_bootstrap4.contrib.bootstrap4_alerts',
-    'djangocms_bootstrap4.contrib.bootstrap4_badge',
-    'djangocms_bootstrap4.contrib.bootstrap4_card',
-    'djangocms_bootstrap4.contrib.bootstrap4_carousel',
-    'djangocms_bootstrap4.contrib.bootstrap4_collapse',
-    'djangocms_bootstrap4.contrib.bootstrap4_content',
-    'djangocms_bootstrap4.contrib.bootstrap4_grid',
-    'djangocms_bootstrap4.contrib.bootstrap4_jumbotron',
-    'djangocms_bootstrap4.contrib.bootstrap4_link',
-    'djangocms_bootstrap4.contrib.bootstrap4_listgroup',
-    'djangocms_bootstrap4.contrib.bootstrap4_media',
-    'djangocms_bootstrap4.contrib.bootstrap4_picture',
-    'djangocms_bootstrap4.contrib.bootstrap4_tabs',
-    'djangocms_bootstrap4.contrib.bootstrap4_utilities',
+    # optional django CMS Frontend modules
+    'djangocms_frontend',
+    'djangocms_frontend.contrib.accordion',
+    'djangocms_frontend.contrib.alert',
+    'djangocms_frontend.contrib.badge',
+    'djangocms_frontend.contrib.card',
+    'djangocms_frontend.contrib.carousel',
+    'djangocms_frontend.contrib.collapse',
+    'djangocms_frontend.contrib.content',
+    'djangocms_frontend.contrib.grid',
+    'djangocms_frontend.contrib.jumbotron',
+    'djangocms_frontend.contrib.link',
+    'djangocms_frontend.contrib.listgroup',
+    'djangocms_frontend.contrib.media',
+    'djangocms_frontend.contrib.image',
+    'djangocms_frontend.contrib.tabs',
+    'djangocms_frontend.contrib.utilities',
 ]
 
 MIDDLEWARE = [
@@ -123,14 +123,24 @@ TEMPLATES = [
     },
 ]
 
+THUMBNAIL_PROCESSORS = (
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    #'easy_thumbnails.processors.scale_and_crop',
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.filters',
+)
+
+
 CMS_TEMPLATES = [
     # a minimal template to get started with
     ('minimal.html', 'Minimal template'),
-    ('whitenoise-static-files-demo.html', 'Static File Demo'),
 
     # optional templates that extend base.html, to be used with Bootstrap 5
-    ('page.html', 'Bootstrap 4 Demo'),
-    ('feature.html', 'Bootstrap 4 Demo with two placeholders')
+    ('bootstrap5.html', 'Bootstrap 5 Demo'),
+
+    # serving static files with whitenoise demo
+    ('whitenoise-static-files-demo.html', 'Static File Demo'),
 ]
 
 WSGI_APPLICATION = 'backend.wsgi.application'
@@ -144,6 +154,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASE_URL = os.environ.get('DATABASE_URL', 'sqlite://:memory:')
 DATABASES = {'default': dj_database_url.parse(DATABASE_URL)}
 
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
