@@ -13,7 +13,7 @@
             {% block canonical_url %}
                 <link rel="canonical" href="{{ request.build_absolute_uri }}"/>
                 <meta property="og:url" content="{{ request.build_absolute_uri }}"/>
-            {% endblock canonical_url %}
+            {% endblock canonical_url %} 
             {% block fb_meta %}{% endblock fb_meta %}
             <title>{% block title %}{% page_attribute "page_title" %}{% endblock %}</title>
             {% block base_css %}{% endblock %}
