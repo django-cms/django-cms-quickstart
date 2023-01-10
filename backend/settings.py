@@ -183,6 +183,11 @@ LANGUAGE_CODE = 'en'
 
 LANGUAGES = [
     ('en', 'English'),
+    ('de', 'Deutsch'),
+    ('es', 'Español'),
+    ('fr', 'Français'),
+    ('it', 'Italiano'),
+    ('ru', 'Russian'),     
 ]
 
 TIME_ZONE = 'UTC'
