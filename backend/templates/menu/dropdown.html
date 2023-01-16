@@ -1,0 +1,7 @@
+{% load i18n menu_tags cache %}
+{% for child in children %}
+    {% if child.get_menu_title|first == ' ' %}
+        <div class="dropdown-divider"></div>
+    {% endif %}
+    <a class="dropdown-item" href="{{ child.get_absolute_url }}"><span>{{ child.get_menu_title }}</span></a>
+{% endfor %}

@@ -5,31 +5,27 @@ boto3
 psycopg2
 uwsgi
 
-django<4  # django CMS 4 doesn't yet support django 4.x and 3.x is the LTS version
+django<4
 dj-database-url
 django-storage-url
 whitenoise
 easy-thumbnails
 
 # key requirements for django CMS
-https://github.com/django-cms/django-cms/archive/refs/heads/release/4.0.1.x.zip#egg=django-cms
+django-cms==4.1.0rc1
 https://github.com/divio/djangocms-versioning/tarball/master#egg=djangocms-versioning
 https://github.com/divio/djangocms-alias/tarball/master#egg=djangocms-alias
 djangocms-picture
 
 # optional, but used in most projects
-djangocms-admin-style
+djangocms-admin-style>=3.2.2
 
 # the default CKEditor - optional, but used in most projects
-https://github.com/django-cms/djangocms-text-ckeditor/archive/refs/heads/support/4.0.x.zip#egg=djangocms-text-ckeditor
-
-# Replaces djangocms-link
-https://github.com/divio/djangocms-url-manager/tarball/master#egg=djangocms-url-manager
+djangocms-text-ckeditor>=5.1.2
 
 
-# optional django CMS Bootstrap 4 modules
-https://github.com/django-cms/djangocms-bootstrap4/archive/refs/heads/support/django-cms-4.0.x.zip
-
+# optional django CMS frontend
+djangocms-frontend
 
 django-filer
 
