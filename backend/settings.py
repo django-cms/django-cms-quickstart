@@ -60,8 +60,6 @@ INSTALLED_APPS = [
     # the default CKEditor - optional, but used in most projects
     'djangocms_text_ckeditor',
 
-    'djangocms_url_manager',
-
     'djangocms_picture',
 
     # optional django CMS Bootstrap 4 modules
@@ -221,3 +219,5 @@ MEDIA_ROOT = os.path.join('/data/media/')
 SITE_ID = 1
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+CMS_CONFIRM_VERSION4 = True
