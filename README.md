@@ -4,7 +4,7 @@
 
 A Dockerised django CMS project, ready to deploy on [Divio](https://www.divio.com/) or another Docker-based cloud platform, and run locally in Docker on your own machine.
 
-This version uses Python 3.11 running and the most up-to-date versions of Django 3.2, and django CMS 4.1.0rc1
+This version uses Python 3.10 running and the most up-to-date versions of Django 3.2, and django CMS 4.1.0rc1
 
 This project is endorsed by the [django CMS Association](https://www.django-cms.org/en/about-us/). That means that it is officially accepted by the dCA as being in line with our roadmap vision and development/plugin policy. Join us on [Slack](https://www.django-cms.org/slack/) for more information or questions. 
 
