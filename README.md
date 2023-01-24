@@ -21,8 +21,8 @@ You need to have docker installed on your system to run this project.
 
 ```bash
 git clone git@github.com:django-cms/django-cms-quickstart.git
-git switch -t origin/support/cms-4.1.x
 cd django-cms-quickstart
+git switch -t origin/support/cms-4.1.x
 docker compose build web
 docker compose up -d database_default
 docker compose run web python manage.py migrate
