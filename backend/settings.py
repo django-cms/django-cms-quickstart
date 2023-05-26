@@ -60,9 +60,7 @@ INSTALLED_APPS = [
     # the default CKEditor - optional, but used in most projects
     'djangocms_text_ckeditor',
 
-    'djangocms_picture',
-
-    # optional django CMS Bootstrap 4 modules
+    # optional django CMS frontend modules
     'djangocms_frontend',
     'djangocms_frontend.contrib.accordion',
     'djangocms_frontend.contrib.alert',
@@ -76,6 +74,7 @@ INSTALLED_APPS = [
     'djangocms_frontend.contrib.link',
     'djangocms_frontend.contrib.listgroup',
     'djangocms_frontend.contrib.media',
+    'djangocms_frontend.contrib.icon',
     'djangocms_frontend.contrib.image',
     'djangocms_frontend.contrib.tabs',
     'djangocms_frontend.contrib.utilities',
@@ -221,3 +220,4 @@ SITE_ID = 1
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 CMS_CONFIRM_VERSION4 = True
+DJANGOCMS_VERSIONING_ALLOW_DELETING_VERSIONS = True

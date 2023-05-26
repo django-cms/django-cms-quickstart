@@ -1,4 +1,3 @@
-!`Python application <https://github.com/django-cms/django-cms-quickstart/workflows/Python%20application/badge.svg?branch=main>`_
 |pythonapp|
 
 #####################
