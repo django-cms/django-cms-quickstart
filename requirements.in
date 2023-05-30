@@ -13,8 +13,8 @@ easy-thumbnails
 
 # key requirements for django CMS
 django-cms>=4.1.0rc3
-https://github.com/django-cms/djangocms-versioning/tarball/master#egg=djangocms-versioning
-https://github.com/django-cms/djangocms-alias/tarball/master#egg=djangocms-alias
+djangocms-versioning>=2.0.0rc1
+djangocms-alias>=2.0.0rc1
 
 # optional, but used in most projects
 djangocms-admin-style>=3.2.2
