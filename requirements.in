@@ -39,6 +39,7 @@ djangocms-frontend
 
 # standard TACC CMS plugins
 # git+http://git@github.com/TACC/Core-CMS-Plugin-….git#egg=djangocms-tacc-…
+git+http://git@github.com/wesleyboar/Core-CMS-Plugin-Image-Gallery.git@5db5ac4#egg=djangocms-tacc-image-gallery
 
 # Django Filer - optional, but used in most projects (alpha) - already implicitly installed through djangocms-file
 # https://github.com/django-cms/django-filer/archive/refs/tags/2.1.1.zip#egg=django-filer

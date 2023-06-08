@@ -81,6 +81,7 @@ INSTALLED_APPS = [
 
     # standard TACC CMS plugins
     # 'djangocms_tacc_…',
+    'djangocms_tacc_image_gallery',
 ]
 
 MIDDLEWARE = [
