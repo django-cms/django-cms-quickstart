@@ -38,6 +38,20 @@ Try it
 
 Then open http://django-cms-quickstart.127.0.0.1.nip.io:8000 (or just http://127.0.0.1:8000) in your browser.
 
+You can stop the server with ``docker compose stop`` without destroying the containers and restart it with
+``docker compose start``.
+
+With ``docker compose down`` the containers are deleted, but the database content ist still preserved in the named
+volume ``django-cms-quickstart_postgres-data`` and the media files are stored in the file system in ``data/media``.
+Then you can update the project e. g. by changing the requirements and settings. Then you can rebuild the web image
+and start the server again:
+
+.. code-block:: bash
+
+  docker compose build web
+  docker compose up -d
+
+
 Note: Since Compose V2, ``docker-compose`` is now included inside docker. For more information, checkout the `Compose V2 <https://docs.docker.com/compose/cli-command/>`_ Documentation.
 
 .. inclusion-end-marker-do-not-remove
@@ -56,7 +70,8 @@ Options are also available for using Postgres/MySQL, uWSGI/Gunicorn/Guvicorn, et
 Updating requirements
 =====================
 
-The project uses a 2 step approach, freezing all dependencies with pip-tools. Read more about how to handle it here: https://blog.typodrive.com/2020/02/04/always-freeze-requirements-with-pip-compile-to-avoid-unpleasant-surprises/
+The project uses a 2 step approach, freezing all dependencies with pip-tools. Read more about how to handle it here:
+https://blog.typodrive.com/2020/02/04/always-freeze-requirements-with-pip-compile-to-avoid-unpleasant-surprises/
 
 Features
 ########
@@ -87,6 +102,11 @@ Env variables
 - to deploy this project in testing mode (recommended) set the environment variable ``DEBUG`` to ``True`` in your hosting environment.
 - For production environment (if ``DEBUG`` is false) django requires you to whitelist the domain. Set the env var ``DOMAIN`` to the host, i.e. ``www.domain.com`` or ``*.domain.com``.
 - If you want the media hosted on S3 set the ``DEFAULT_FILE_STORAGE`` variable accordingly.
+- If you want to access the PostgreSQL database from the host system, set ``EXT_PG_PORT`` to the desired port number.
+  5432 is the standard port number. If you run a PosgreSQL on your host system, you may want to set another port number.
+  If this variable is empty (the default), the PosgreSQL instance in the container is only reachable within docker, but
+  not from outside.
+
 
 Deployment Commands
 ===================

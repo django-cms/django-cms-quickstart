@@ -20,3 +20,4 @@ db.sqlite3
 .Trashes
 
 .idea/
+/.env
