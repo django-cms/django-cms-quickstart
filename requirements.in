@@ -1,5 +1,5 @@
 # Compile this file for changes to take effect:
-# pip-compile requirements.in >> requirements.txt
+# pip-compile -U --resolver=backtracking
 
 boto3
 psycopg2
