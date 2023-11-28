@@ -23,7 +23,7 @@ services:
     # Select one of the following db configurations for the database
     image: postgres:13.5-alpine
     ports:
-      - "5432:5432/tcp"  # allow your local dev env to connect to the db
+      - "5433:5432/tcp"  # allow your local dev env to connect to the db
     environment:
       POSTGRES_DB: "db"
       POSTGRES_PASSWORD: "password"

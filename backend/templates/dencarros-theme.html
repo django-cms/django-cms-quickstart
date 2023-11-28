@@ -1,0 +1,149 @@
+
+{% extends "dencarros-base.html" %}
+{% load static cms_tags menu_tags i18n %}
+
+{% block base_css %}
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous"/>
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/custom-styles.css' %}" />
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var iframe = document.querySelector('.custom-padding iframe');
+            if (iframe) {
+                iframe.style.width = '100%';
+                iframe.style.height = 'auto';
+                iframe.style.aspectRatio = '16 / 9';
+            }
+        });
+        document.addEventListener("DOMContentLoaded", function() {
+            var selectedLanguage = localStorage.getItem('selectedLanguage');
+            
+            var languageIcon = document.getElementById('current-language-flag');
+            if (selectedLanguage && languageIcon) {
+                switch (selectedLanguage) {
+                    case 'en':
+                        languageIcon.src = "{% static 'en_flag.svg' %}";
+                        break;
+                    case 'es':
+                        languageIcon.src = "{% static 'es_flag.svg' %}";
+                        break;
+                    case 'ca':
+                        languageIcon.src = "{% static 'cv_flag.svg' %}";
+                        break;
+                }
+            }
+        
+            // Resto de tu código...
+        });
+        document.querySelectorAll('.dropdown-item').forEach(item => {
+            item.addEventListener('click', function() {
+              const imgSrc = this.querySelector('img').src;
+              const languageIcon = document.querySelector('#navbarDropdownLanguageLink img');
+              if (languageIcon) {
+                languageIcon.src = imgSrc;
+              } else {
+                const newImg = document.createElement('img');
+                newImg.src = imgSrc;
+                newImg.style.height = '20px';
+                document.querySelector('#navbarDropdownLanguageLink').appendChild(newImg);
+              }
+            });
+            
+          });
+          document.addEventListener("DOMContentLoaded", function() {
+            // Resto de tu código...
+        
+            document.querySelectorAll('.dropdown-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    const languageCode = this.querySelector('form').id.replace('language-form-', '');
+                    localStorage.setItem('selectedLanguage', languageCode);
+                });
+            });
+        });
+    </script>
+        
+{% endblock %}
+
+{% block navbar %}
+
+<nav class="navbar {% block navbar_options %}navbar-expand-lg navbar-dark bg-dark{% endblock %}">
+    <!-- Utiliza un contenedor más pequeño como .container o .container-md para que los elementos no se dispersen demasiado -->
+   <!--  <div class="container-md mx-auto">-->
+   <!-- <div class="container-lg">-->
+    <div class="central-nav-container">
+        <a href="/" class="navbar-brand"> 
+                <img src="{% static 'dencarros_logo_vectorial.svg' %}" alt="La Font d'en Carròs Logo" class="logo">
+        </a>
+       
+            <!-- Toggler -->
+            <a class="navbar-brand" href="/">{% block brand %}{% endblock %}</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navbar links and social media icons -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold">
+                        {% block menubar %}
+                        {% show_menu 0 100 0 100 'menu/menu.html' %}
+                        {% endblock menubar %}
+                    </ul>
+                    <!-- Social media icons -->
+                    <ul class="navbar-nav custom-nav-margin">
+                        <li class="nav-item social-icon">
+                            <a class="nav-link" href="https://www.facebook.com/ajuntament.delafontdencarros" target="_blank"><i class="bi bi-facebook"></i></a>
+                        </li>
+                        <li class="nav-item social-icon">
+                            <a class="nav-link" href="https://www.instagram.com/ajuntamentlafontdencarros/" target="_blank"><i class="bi bi-instagram"></i></a>
+                        </li>
+                        <li class="nav-item social-icon">
+                            <a class="nav-link" href="https://twitter.com/i/flow/login?redirect_after_login=%2FFontdEnCarros" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                        </li>
+                    </ul>
+                    <!-- Switcher de idiomas -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle no-arrow" href="#" id="navbarDropdownLanguageLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {% trans "Language" %}
+                                <img id="current-language-flag" src="{% static 'es_flag.svg' %}" alt="Current Language" style="height: 25px; padding-left: 5px;">
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownLanguageLink">
+                                {% get_current_language as CURRENT_LANGUAGE %}
+                                {% get_available_languages as AVAILABLE_LANGUAGES %}
+                                {% for language in AVAILABLE_LANGUAGES %}
+                                <li>
+                                    <a class="dropdown-item d-flex justify-content-between align-items-center {% if language.0 == CURRENT_LANGUAGE %}active{% endif %}" href="#" onclick="event.preventDefault(); document.getElementById('language-form-{{ language.0 }}').submit();">
+                                        <span>{{ language.1 }}</span>
+                                        {% if language.0 == 'en' %}
+                                            <img src="{% static 'en_flag.svg' %}" alt="English" style="height: 25px;">
+                                        {% elif language.0 == 'es' %}
+                                            <img src="{% static 'es_flag.svg' %}" alt="Español" style="height: 25px;">
+                                        {% elif language.0 == 'ca' %}
+                                            <img src="{% static 'cv_flag.svg' %}" alt="Valencià" style="height: 25px;">
+                                        {% endif %}
+                                        <form id="language-form-{{ language.0 }}" action="{% url 'set_language' %}" method="post" style="display: none;">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="language" value="{{ language.0 }}">
+                                            <input type="hidden" name="next" value="{{ request.path }}">
+                                        </form>
+                                    </a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        
+                        <!-- Añade aquí más íconos si es necesario -->
+                    </ul>
+                </div>
+            </div>
+    <!-- </div>-->
+</nav>
+
+{% endblock navbar %}
+
+{% block base_js %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+{% endblock base_js %}

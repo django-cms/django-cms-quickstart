@@ -1,0 +1,84 @@
+
+{% extends "dencarros-base.html" %}
+{% load static cms_tags menu_tags i18n %}
+
+{% block base_css %}
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous"/>
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/custom-styles.css' %}" />
+{% endblock %}
+
+{% block navbar %}
+
+<nav class="navbar {% block navbar_options %}navbar-expand-lg navbar-dark bg-dark{% endblock %}">
+    <!-- Utiliza un contenedor más pequeño como .container o .container-md para que los elementos no se dispersen demasiado -->
+   <!--  <div class="container-md mx-auto">-->
+   <!-- <div class="container-lg">-->
+    <div class="central-nav-container">
+        <a href="/" class="navbar-brand mx-auto mx-lg-0"> 
+                <img src="{% static 'dencarros_logo_vectorial.svg' %}" alt="La Font d'en Carròs Logo" class="logo">
+        </a>
+       
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navbar links and social media icons -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold">
+                        {% block menubar %}
+                        {% show_menu 0 100 0 100 'menu/menu.html' %}
+                        {% endblock menubar %}
+                    </ul>
+                    <!-- Social media icons -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.facebook.com/ajuntament.delafontdencarros" target="_blank"><i class="bi bi-facebook"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.instagram.com/ajuntamentlafontdencarros/" target="_blank"><i class="bi bi-instagram"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://twitter.com/i/flow/login?redirect_after_login=%2FFontdEnCarros" target="_blank"><i class="bi bi-twitter"></i></a>
+                        </li>
+                    </ul>
+                    <!-- Switcher de idiomas -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownLanguageLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {% trans "Language" %}
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownLanguageLink">
+                                {% get_current_language as CURRENT_LANGUAGE %}
+                                {% get_available_languages as AVAILABLE_LANGUAGES %}
+                                {% for language in AVAILABLE_LANGUAGES %}
+                                <li>
+                                    <a class="dropdown-item {% if language.0 == CURRENT_LANGUAGE %}active{% endif %}" href="#" onclick="event.preventDefault(); document.getElementById('language-form-{{ language.0 }}').submit();">
+                                        {{ language.1 }}
+                                        <form id="language-form-{{ language.0 }}" action="{% url 'set_language' %}" method="post" style="display: none;">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="language" value="{{ language.0 }}">
+                                            <input type="hidden" name="next" value="{{ request.path }}">
+                                        </form>
+                                    </a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        
+                        <!-- Añade aquí más íconos si es necesario -->
+                    </ul>
+                </div>
+            </div>
+    <!-- </div>-->
+</nav>
+
+{% endblock navbar %}
+
+{% block base_js %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+{% endblock base_js %}

@@ -21,13 +21,28 @@
 {% endspaceless %}{% render_block 'css' %}{% spaceless %}
     {% block page_head %}{% endblock %}
     </head>
-    <body {% block body_attrs %}{% endblock %}>
+    <body {% block body_attrs %}{% endblock %}>       
 {% endspaceless %}{% cms_toolbar %}{% spaceless %}
     {% block navbar %}{% endblock %}
     {% block content %}
-        {% placeholder "Content" %}
-        
 
+    <!-- Carrusel para dispositivos no móviles: visible en pantallas grandes -->   
+    <div id="carouselDesktop" class="carousel slide d-none d-md-block" data-ride="carousel">
+        {% placeholder "Carrusel-Desktop" %}
+    </div>      
+    <!-- Carrusel para dispositivos móviles: visible solo en pantallas pequeñas --> 
+    <div id="carouselMobile" class="carousel slide d-block d-md-none" data-ride="carousel">
+        {% placeholder "carousel-Mobile" %}   
+    </div>
+         
+        {% placeholder "Sub-Menu" %}
+        {% placeholder "Content" %} 
+        {% placeholder "Quehacer" %} 
+        {% placeholder "Contacto" %} 
+        {% placeholder "Mapa" %}                 
+        {% placeholder "Footer" %}  
+       
+        
     {% endblock content %}
     {% block base_js %}{% endblock %}
 {% endspaceless %}{% render_block 'js' %}{% spaceless %}

@@ -141,6 +141,13 @@ CMS_TEMPLATES = [
 
     # serving static files with whitenoise demo
     ('whitenoise-static-files-demo.html', 'Static File Demo'),
+    
+    # personalizando para la 'fontdencarros' @jose_luis_rosa 
+    ('dencarros-theme.html', 'Dencarros Template'),
+    
+    # personalizando para la 'fontdencarros' @jose_luis_rosa 
+    ('dencarros-theme-II.html', 'Dencarros Template II'),
+
 ]
 
 WSGI_APPLICATION = 'backend.wsgi.application'
@@ -179,10 +186,12 @@ if not DEBUG:
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'es'
 
 LANGUAGES = [
     ('en', 'English'),
+    ('es', 'Español'),
+    ('ca', 'Valenciano'),  # Añadido catalán/valenciano
 ]
 
 TIME_ZONE = 'UTC'
@@ -193,7 +202,9 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR.parent, 'locale'),
+]
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 

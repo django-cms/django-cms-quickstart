@@ -1,0 +1,268 @@
+/********************************/
+/*  Estilos para la barra menú  */
+/********************************/
+/*
+.central-nav-container {
+  border: 1px solid red; 
+  
+}
+.navbar-brand .logo {
+  border: 1px solid red;
+}
+*/
+.central-nav-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten si no hay suficiente espacio */
+  justify-content: center; /* Centra los elementos en el eje principal */
+  align-items: center; /* Centra los elementos en el eje cruzado */
+  margin: auto; /* Centra el contenedor en el contenedor padre */
+  max-width: 1150px; /* Establece un ancho máximo */
+  padding: 0 15px; /* Proporciona un poco de espacio interno */
+}
+
+/* 
+.nav-link.active {
+  text-decoration: underline; Aplica un subrayado 
+}
+*/
+.navbar-brand .logo {
+  padding-top: 5px; /* Añade un padding superior */
+  padding-bottom: 5px; /* Añade un padding inferior */
+  display: block;
+  max-width: 100%; /* Asegúrate de que el logo puede crecer hasta su tamaño máximo */
+  max-height: auto; /* Permite que el logo mantenga su proporción */
+  min-width: 290px; /* Establece un ancho mínimo para que no se vuelva demasiado pequeño */
+  min-height: auto; /* Puedes ajustar esto si sabes la altura específica que debería tener el logo */
+}
+
+/* Centra los elementos del menú y los iconos de redes sociales cuando no esté colapsado */
+/* Ajustes para pantallas grandes */
+@media (min-width: 992px) {
+  .central-nav-container {
+    max-width: 1150px; /* O el ancho máximo que prefieras */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container-md {
+    display: flex;
+    justify-content: center; /* Esto centrará el logotipo y los elementos del menú juntos */
+    align-items: center;
+  }
+  
+  .navbar-nav {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
+  }
+  .nav-item {
+      margin: 0 10px; /* Ajusta el espaciado entre iconos */
+  }
+ 
+}
+
+/* Estilos para los iconos de redes sociales y switch de idioma */
+.navbar-nav .nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+  
+  .navbar-brand {
+    margin-right: 10px; /* Añade un margen a la derecha del logo */
+  }
+
+  .navbar-toggler {
+    margin-left: 10px; /* Añade un margen a la izquierda del botón */
+  }
+}
+
+/* Ajustes para teléfonos muy pequeños */
+/*
+@media (max-width: 480px) {
+  .navbar-brand .logo {
+    max-width: 250px; 
+  max-height: 100%; 
+  }
+}
+*/
+
+/********************************/
+/*   Estilos para el carousel   */
+/********************************/
+
+/* Ajustar Aspect Ratio */
+@media (min-width: 768px) {
+  .carousel-item {
+      position: relative;
+      width: 100%;
+  }
+
+  .carousel-item::before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: 32%; /* 600 / 1904 * 100 */
+  }
+
+  .carousel-inner img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+}
+
+ /* Oscurecer Imágenes */
+
+.carousel-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4); /* Ajusta la opacidad según necesites */
+  z-index: 1;
+}
+
+/* Asegúrate de que el texto esté por encima del overlay */
+.carousel-caption {
+  position: relative;
+  z-index: 2;
+}
+
+ /* Ajustar texto */
+
+/* Asegurarse de que .carousel-caption actúa como un contenedor flex */
+/* Asegurarse de que .carousel-caption actúa como un contenedor flex */
+.carousel-caption {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra verticalmente dentro del carrusel */
+  align-items: center; /* Centra horizontalmente */
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  z-index: 10; 
+}
+
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Asegura que todos los hijos se alinean al centro horizontalmente */
+  max-width: 80%; /* o el porcentaje que prefieras */
+  margin: 0 auto; /* Centra el .text-container en el carrusel */
+  text-align: center;
+}
+
+.text-container h1 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra horizontal, sombra vertical, difuminado, color */
+  margin: 0 0 10px 0; /* Añade un pequeño margen debajo del h1 si es necesario */
+  font-size: 2.8rem; /* Ajusta según sea necesario */
+  font-weight: bold;
+}
+
+.text-container p {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra más sutil para el párrafo */
+  margin: 0;
+  max-width: 50%; /* Limita el ancho del párrafo a la mitad del ancho del contenedor de texto */
+  font-size: 1rem; /* Ajusta según sea necesario */
+}
+
+
+
+@media (min-width: 992px) {
+  .text-container h1 {
+    font-size: 2.8rem; /* Tamaño de fuente aún más grande en pantallas más anchas */
+  }
+  .text-container p {
+    font-size: 1.5rem; /* Tamaño de fuente proporcional al <h1> en pantallas más anchas */
+  }
+}
+@media (max-width: 767px) {
+  .text-container {
+    max-width: 100%; /* Asegúrate de que el contenedor de texto no sea más ancho que la pantalla */
+    padding: 10px; /* Agrega algo de padding para evitar que el texto toque los bordes de la pantalla */
+  }
+  .text-container h1 {
+    font-size: 1.5rem; /* Tamaño de fuente más pequeño para pantallas móviles */
+  }
+  .text-container p {
+    font-size: 1rem; /* Tamaño de fuente ajustado para pantallas móviles */
+    max-width: 70%; /* Un ancho mayor para que el texto no sea demasiado estrecho */
+  }
+}
+
+/*******************************/
+/*   Estilos para el submenu   */
+/*******************************/
+.submenu-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap; /* Evita el salto de línea */
+  width: auto; /* Ajusta el ancho según sea necesario */
+  flex-direction: row;
+}
+
+.submenu-nav .nav-item {
+  margin: 0 14px; /* Espaciado constante */
+}
+
+/* Ajustes para el punto de colapso de la barra de navegación */
+@media (max-width: 992px) {
+  .navbar-expand-lg .submenu-nav {
+    justify-content: start; /* Alinea los elementos al inicio en pantallas más pequeñas */
+  }
+}
+
+/*******************************/
+/*       Portada content       */
+/*******************************/
+.font-thin {
+  font-weight: 300; /* Puedes ajustar este valor para obtener el 'thin' deseado */
+}
+
+.custom-text {
+  font-size: 1.2rem !important; /* Ajusta esto para hacer la letra más pequeña */
+  width: 90%;
+    margin: 0 auto; /* Centra el texto dentro del contenedor */
+}
+
+.custom-title {
+  font-size: 2rem !important; /* Tamaño fijo para el título */
+}
+
+@media (max-width: 768px) {
+  .custom-title {
+      font-size: 2rem !important; /* Mantiene el tamaño del título en dispositivos móviles */
+  }  
+}
+.video-padding {
+  padding-top: 25px; /* Espacio por encima del video */
+  padding-bottom: 25px; /* Espacio por debajo del video */
+}
+
+.no-arrow::after {
+  display: none;
+}
+
+.social-icon {
+  margin: 0 !important; /* Espaciado reducido entre iconos */
+  font-size: 1.4rem; /* Ajusta este valor según sea necesario */
+}
+.custom-nav-margin {
+  margin-right: 15px; /* Añade margen a la derecha */
+  margin-left: 17px; /* Añade margen a la izquierda */
+}
