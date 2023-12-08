@@ -4,7 +4,7 @@ Aliases
 .. include:: ../alias-note.rst
 
 
-In Django CMS, the Alias plugin is a powerful tool that enables content editors to display in as many places as they like without duplicating it. Essentially, it creates a reference or link to content that resides in a seperate place - called an "Alias".
+In Django CMS, the Alias plugin is a powerful tool that enables content editors to display in as many places as they like without duplicating it. Essentially, it creates a reference or link to content that resides in a separate place - called an "Alias".
 
 Key aspects of the Alias plugin include:
 

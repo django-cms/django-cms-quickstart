@@ -54,7 +54,7 @@ Required fields
 
 Optional fields
 ===============
-* **Menu title**: If set this is used in your site's navigation menu otherwise the title field of the page is used. This usefull if the entire title is too long to be used in navigation. For example, the title "Partner Company:Our Story" will be far too long to work well in the navigation menu, especially for your users on smartphones. "Our Story" would make a more appropriate menu title.
+* **Menu title**: If set this is used in your site's navigation menu otherwise the title field of the page is used. This useful if the entire title is too long to be used in navigation. For example, the title "Partner Company:Our Story" will be far too long to work well in the navigation menu, especially for your users on smartphones. "Our Story" would make a more appropriate menu title.
 * **Page title**: If set it replaces the title which is displayed in search engine results and in the browser tab.
 
 Brief review of the different title fields

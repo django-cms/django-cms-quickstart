@@ -90,7 +90,7 @@ You will probably not use the advanced settings because they are mainly used for
 .. image:: ./images/02-page-settings.jpg
   :alt: The page settings dialogue
 
-Note that the page settings are available seperately for all languages of the page. Use the language tabs to navigate between settings in different languages.
+Note that the page settings are available separately for all languages of the page. Use the language tabs to navigate between settings in different languages.
 
 The version menu
 ================

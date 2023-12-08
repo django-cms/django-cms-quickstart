@@ -73,7 +73,7 @@ Comparing versions
 
 With many versions being available, it sometimes is difficult to keep track of changes. You can visually compare two versions by
 
-* Either selecting two versions in the manage versions dialog and the chosing the "Compare versions" from the actions dropdown and hitting "Go".
+* Either selecting two versions in the manage versions dialog and the choosing the "Compare versions" from the actions dropdown and hitting "Go".
 * From the Version menu
 
 An example of a visual comparison is shown here:

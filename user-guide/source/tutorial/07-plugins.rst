@@ -75,7 +75,7 @@ You can change existing plugins by either
 * **double clicking** on the content in the page (when in edit mode)
 * **clicking the pencil icon** of the plugin in the structure board.
 
-Editing works exaclty like creating a plugin
+Editing works exactly like creating a plugin
 
 
 Integrating content

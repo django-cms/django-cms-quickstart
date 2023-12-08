@@ -26,8 +26,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pip-
       - run: python -m pip install -r user-guide/requirements.txt
-      - run: codespell -w *.rst
-      - run: codespell -w docs
+      - run: codespell -w user-guide
       - name: Build docs
         run: |
           cd user-guide

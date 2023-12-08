@@ -22,7 +22,7 @@ Frontend
 .. include:: ../frontend-note.include
 
 
-The frontend plugins are part of the djangocms-frontend package, which might (or might not) be installed on your site. Its purpose is to provide web site compontents like sliders, accordions, etc. for content editors. Thóse components in most cases are implemented by the deisnger of the web site. The contend editors can use the component at any place on the site.
+The frontend plugins are part of the djangocms-frontend package, which might (or might not) be installed on your site. Its purpose is to provide web site components like sliders, accordions, etc. for content editors. Thóse components in most cases are implemented by the deisnger of the web site. The contend editors can use the component at any place on the site.
 
 **Accordion**
   Use the Accordion plugin to build vertically collapsing accordions.
