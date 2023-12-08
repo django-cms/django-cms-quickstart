@@ -21,3 +21,5 @@ db.sqlite3
 
 .idea/
 .env
+/user-guide/env/
+/user-guide/build/
