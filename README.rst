@@ -7,7 +7,7 @@ django CMS quickstart
 A dockerised django CMS project, ready to deploy on `Divio <https://www.divio.com/>`_ or another Docker-based cloud
 platform, and run locally in Docker on your own machine.
 
-This version uses Python 3.11 and the most up-to-date versions of Django 3.2, and django CMS 4.1.0rc3
+This version uses Python 3.11 and the most up-to-date versions of Django 4.2, and django CMS 4.1.0
 
 This project is endorsed by the `django CMS Association <https://www.django-cms.org/en/about-us/>`_. That means that it
 is officially accepted by the dCA as being in line with our roadmap vision and development/plugin policy. Join us on
@@ -34,7 +34,6 @@ Try it
 
   git clone git@github.com:django-cms/django-cms-quickstart.git
   cd django-cms-quickstart
-  git switch -t origin/support/cms-4.1.x
   docker compose build web
   docker compose up -d database_default
   docker compose run web python manage.py migrate
