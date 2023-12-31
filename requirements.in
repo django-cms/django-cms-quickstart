@@ -5,7 +5,7 @@ boto3
 psycopg2
 uwsgi
 
-django<4
+django<5
 dj-database-url
 django-storage-url
 whitenoise
