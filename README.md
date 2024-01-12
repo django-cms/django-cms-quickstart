@@ -23,8 +23,8 @@ git checkout support/cms-3.11.x
 cd django-cms-quickstart
 docker compose build web
 docker compose up -d database_default
-docker compose run web python manage.py migrate
-docker compose run web python manage.py createsuperuser
+docker compose run --rm web python manage.py migrate
+docker compose run --rm web python manage.py createsuperuser
 docker compose up -d
 ```
 
