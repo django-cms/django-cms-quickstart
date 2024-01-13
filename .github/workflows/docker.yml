@@ -1,0 +1,52 @@
+name: Docker test suite
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref_name }}-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: true
+
+jobs:
+  pytest:
+    name: Docker test build
+    # List of supported runners:
+    # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pre-build container images
+        run: |
+          docker network create djangocmsnet
+          docker compose build --force-rm
+
+      - name: Run the containers
+        run: |
+          docker compose build web
+          docker compose up database_default -d
+          sleep 2s
+          docker compose run web python manage.py migrate
+          docker compose up -d
+
+      - name: 'debug: Display state and logs'
+        if: always()
+        run: |
+          docker compose ps
+          docker compose logs web
+          docker compose logs database_default
+
+      - name: Execute django check
+        run: docker compose exec -w /app web python manage.py check --deploy
+
+      - name: Execute test suite
+        run: docker compose exec -w /app web python manage.py test
+
+      - name: Terminate all components
+        if: always()
+        run: docker compose down -v
