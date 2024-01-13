@@ -24,7 +24,7 @@ djangocms-text-ckeditor>=5.1.2
 
 
 # optional django CMS frontend
-djangocms-frontend
+djangocms-frontend!=1.2.1
 
 django-filer
 
