@@ -2,6 +2,7 @@
 # pip-compile -U --resolver=backtracking
 
 boto3
+mysqlclient
 psycopg2
 uwsgi
 
@@ -12,9 +13,7 @@ whitenoise
 easy-thumbnails
 
 # key requirements for django CMS
-django-cms>=4.1.0
-djangocms-versioning>=2.0.0
-djangocms-alias>=2.0.0
+django-cms==3.11.4
 
 # optional, but used in most projects
 djangocms-admin-style>=3.2.2

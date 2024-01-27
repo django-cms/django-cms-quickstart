@@ -21,23 +21,23 @@ services:
 
   database_default:
     # Select one of the following db configurations for the database
-    image: postgres:15-alpine
+    image: mysql:8.0.34
     ports:
-      - "${DB_PORT-}:5432/tcp"  # allow your local dev env to connect to the db if variable set
+      - "${DB_PORT-}:3306/tcp"  # allow your local dev env to connect to the db if variable set
     environment:
-      POSTGRES_DB: "db"
-      POSTGRES_PASSWORD: "password"
-      POSTGRES_HOST_AUTH_METHOD: "trust"
-      SERVICE_MANAGER: "fsm-postgres"
+      MYSQL_DATABASE: "db"
+      MYSQL_USER: "cms"
+      MYSQL_PASSWORD: "password"
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
 
     networks:
       - djangocmsnet
 
     volumes:
-       - postgres-data:/var/lib/postgresql/data/
+       - mysql:/var/lib/mysql
 
 networks:
   djangocmsnet:
 
 volumes:
-  postgres-data:
+  mysql:
