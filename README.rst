@@ -113,10 +113,11 @@ Env variables
 - For production environment (if ``DEBUG`` is false) django requires you to whitelist the domain. Set the env var
   ``DOMAIN`` to the host, i.e. ``www.domain.com`` or ``*.domain.com``.
 - If you want the media hosted on S3 set the ``DEFAULT_FILE_STORAGE`` variable accordingly.
-- If you want to access the PostgreSQL database from the host system, set ``DB_PORT`` to the desired port number.
-  5432 is the standard port number. If you run PosgreSQL on your host system, you may want to set another port number.
-  If this variable is empty (the default), the PosgreSQL instance in the container is only reachable within docker, but
-  not from outside.
+- If you want to access the PostgreSQL database from the host system, set DB_PORT to the desired port number. The default port number set in .env-local is 5433,
+but feel free to change it according to your preference. 5432 is the standard port number.
+If you run PostgreSQL on your host system, you may want to set another port number.
+If this variable is empty (the default), the PostgreSQL instance in the container is only reachable within Docker,
+but not from outside.
 
 
 Deployment Commands
