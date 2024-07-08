@@ -132,11 +132,11 @@ THUMBNAIL_PROCESSORS = (
 )
 
 CMS_TEMPLATES = [
+    # Default template that extend base.html, to be used with Bootstrap 5
+    ('bootstrap5.html', 'Bootstrap 5 Demo'),
+
     # a minimal template to get started with
     ('minimal.html', 'Minimal template'),
-
-    # optional templates that extend base.html, to be used with Bootstrap 5
-    ('bootstrap5.html', 'Bootstrap 5 Demo'),
 
     ('whitenoise-static-files-demo.html', 'Static File Demo'),
 ]
