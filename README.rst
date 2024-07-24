@@ -13,8 +13,7 @@ This project is endorsed by the `django CMS Association <https://www.django-cms.
 is officially accepted by the dCA as being in line with our roadmap vision and development/plugin policy. Join us on
 `Slack <https://www.django-cms.org/slack/>`_ for more information or questions.
 
-The documentation for version 4.1 is still work in progress and - for the time being - can be found here:
-https://django-cms-docs.readthedocs.io/en/latest/
+The documentation for version 4.1 can be found here: https://docs.django-cms.org/
 
 Installation
 ############
