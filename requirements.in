@@ -5,7 +5,7 @@ boto3
 psycopg2
 uwsgi
 
-django<5
+django<=6
 dj-database-url
 django-storage-url
 whitenoise
@@ -19,12 +19,12 @@ djangocms-alias>=2.0.0
 # optional, but used in most projects
 djangocms-admin-style>=3.2.2
 
-# the default CKEditor - optional, but used in most projects
-djangocms-text-ckeditor>=5.1.2
+# the next-gen text editor
+djangocms-text
 
 
 # optional django CMS frontend
-djangocms-frontend!=1.2.1
+djangocms-frontend
 
 django-filer
 

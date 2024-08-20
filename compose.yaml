@@ -1,5 +1,3 @@
-version: "3"
-
 services:
   web:
     # the application's web service (container) will use an image based on our Dockerfile
