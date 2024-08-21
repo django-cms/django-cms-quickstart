@@ -211,8 +211,8 @@ STORAGES = {
         'BACKEND': 'backend.settings.DefaultStorageClass',
     },
     'staticfiles': {
-        # 'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',
-        'BACKEND': 'whitenoise.storage.CompressedStaticFilesStorage',
+        'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',
+        # 'BACKEND': 'whitenoise.storage.CompressedStaticFilesStorage',
     },
 }
 
