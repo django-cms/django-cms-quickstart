@@ -35,8 +35,8 @@ Try it
   cd django-cms-quickstart
   docker compose build web
   docker compose up -d database_default
-  docker compose run web python manage.py migrate
-  docker compose run web python manage.py createsuperuser
+  docker compose run --rm web python manage.py migrate
+  docker compose run --rm web python manage.py createsuperuser
   docker compose up -d
 
 Then open http://django-cms-quickstart.127.0.0.1.nip.io:8000 (or just http://127.0.0.1:8000) in your browser.
@@ -74,8 +74,12 @@ Options are also available for using Postgres/MySQL, uWSGI/Gunicorn/Guvicorn, et
 Updating requirements
 =====================
 
-The project uses a 2 step approach, freezing all dependencies with pip-tools. Read more about how to handle it here:
-https://blog.typodrive.com/2020/02/04/always-freeze-requirements-with-pip-compile-to-avoid-unpleasant-surprises/
+The project uses a django best practise two step approach, freezing all dependencies with pip-tools. Here is how to update requirements:
+
+1. Change `requirements.in` according to your needs. There is no need to pin the package versions here unless you have a good reason (i.e. known incompatibilities)
+2. Run `docker compose run --rm web pip-compile requirements.in >> requirements.txt`
+3. `requirements.txt` should now have changed
+4. Rebuild the container `docker compose build web` and restart `docker compose up -d`
 
 Features
 ########

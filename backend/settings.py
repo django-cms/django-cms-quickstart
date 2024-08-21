@@ -57,8 +57,8 @@ INSTALLED_APPS = [
     'djangocms_alias',
     'parler',
 
-    # the default CKEditor - optional, but used in most projects
-    'djangocms_text_ckeditor',
+    # the next-gen text editor - optional, but used in most projects
+    'djangocms_text',
 
     # optional django CMS frontend modules
     'djangocms_frontend',
@@ -194,25 +194,31 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+STATICFILES_DIRS = [  # this are were django staticfiles is looking for sources
+    BASE_DIR / "backend" / "static",
+]
+
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_collected')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_collected')  # this is were the collected files are placed
 
-# Media files
-# DEFAULT_FILE_STORAGE is configured using DEFAULT_STORAGE_DSN
-
-# read the setting value from the environment variable
-DEFAULT_STORAGE_DSN = os.environ.get('DEFAULT_STORAGE_DSN')
-
-# dsn_configured_storage_class() requires the name of the setting
+# read the setting value from the environment variable. This functionality is
+# provided by https://github.com/divio/django-storage-url
+DEFAULT_STORAGE_DSN = os.environ.get('DEFAULT_STORAGE_DSN', '/data/media/')
 DefaultStorageClass = dsn_configured_storage_class('DEFAULT_STORAGE_DSN')
 
-# Django's DEFAULT_FILE_STORAGE requires the class name
-DEFAULT_FILE_STORAGE = 'backend.settings.DefaultStorageClass'
+STORAGES = {
+    'default': {
+        'BACKEND': 'backend.settings.DefaultStorageClass',
+    },
+    'staticfiles': {
+        'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',
+        # 'BACKEND': 'whitenoise.storage.CompressedStaticFilesStorage',
+    },
+}
 
 # only required for local file storage and serving, in development
 MEDIA_URL = 'media/'
-MEDIA_ROOT = os.path.join('/data/media/')
+MEDIA_ROOT = '/data/media/'
 
 
 SITE_ID = 1
