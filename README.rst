@@ -4,19 +4,16 @@
 django CMS quickstart
 #####################
 
-A dockerised django CMS project, ready to deploy on `Divio <https://www.divio.com/>`_ or another Docker-based cloud
-platform, and run locally in Docker on your own machine.
-
-This version uses Python 3.11 and the most up-to-date versions of Django 4.2, and django CMS 4.1.0
-
-This project is endorsed by the `django CMS Association <https://www.django-cms.org/en/about-us/>`_. That means that it
-is officially accepted by the dCA as being in line with our roadmap vision and development/plugin policy. Join us on
-`Slack <https://www.django-cms.org/slack/>`_ for more information or questions.
-
-The documentation for version 4.1 can be found here: https://docs.django-cms.org/
+- A dockerised django CMS project intended to be run locally in Docker on your own machine or on a Docker-based cloud, such as `Divio <https://www.divio.com/>`_ 
+- This version uses Python 3.11 and the most up-to-date versions of Django 4.2, and django CMS 4.1.0
+- This project is endorsed by the `django CMS Association <https://www.django-cms.org/en/about-us/>`_. That means that it is officially accepted by the dCA as being in line with our roadmap vision and development/plugin policy. Join us on `Slack <https://www.django-cms.org/slack/>`_ for more information or questions.
+- The documentation for  django CMS can be found here: https://docs.django-cms.org/
 
 Installation
 ############
+
+Requirements
+============
 
 You need to have Docker installed on your system to run this project.
 
@@ -24,8 +21,8 @@ You need to have Docker installed on your system to run this project.
 - If you have not used docker in the past, please read this
   `introduction on docker <https://docs.docker.com/get-started/>`_  here.
 
-Try it
-######
+Local Setup
+===========
 
 .. inclusion-marker-do-not-remove
 
@@ -87,13 +84,18 @@ Features
 Static Files with Whitenoise
 ============================
 
-This quickstart demo has a cloud-ready static files setup via django-whitenoise.
+- This quickstart demo has a cloud-ready static files setup via django-whitenoise.
+- In the containerized cloud the application is not served by a web server like nginx but directly through uwsgi. django-whitenoise is the glue that's needed to serve static files in your application directly through uwsgi.
+- See the django-whitenoise settings in settings.py and the ``quickstart/templates/whitenoise-static-files-demo.html`` demo page template that serves a static file.
 
-In the containerized cloud the application is not served by a web server like nginx but directly through uwsgi.
-django-whitenoise is the glue that's needed to serve static files in your application directly through uwsgi.
+Env variables
+=============
 
-See the django-whitenoise settings in settings.py and the ``quickstart/templates/whitenoise-static-files-demo.html``
-demo page template that serves a static file.
+- By default, Docker injects the env vars defined in ``.env-local`` into the quickstart project.
+- If you want to access the PostgreSQL database from the host system, set ``DB_PORT`` to the desired port number.
+  5432 is the standard port number. If you run PosgreSQL on your host system, you may want to set another port number.
+  If this variable is empty (the default), the PosgreSQL instance in the container is only reachable within docker, but
+  not from outside.
 
 Contribution
 ############
@@ -105,22 +107,14 @@ Here is the official django CMS repository:
 Deployment
 ##########
 
-Note that this is just a demo project to get you started. If you want a full production ready site with all the bells
+Note that this is just a demo project to get you started. It is designed to be run locally through docker. If you want a full production ready site with all the bells
 and whistles we recommend you have a look at https://github.com/django-cms/djangocms-template instead.
 
-Env variables
-=============
+Some deployment hints:
 
-- to deploy this project in testing mode (recommended) set the environment variable ``DEBUG`` to ``True`` in your
-  hosting environment.
-- For production environment (if ``DEBUG`` is false) django requires you to whitelist the domain. Set the env var
-  ``DOMAIN`` to the host, i.e. ``www.domain.com`` or ``*.domain.com``.
-- If you want the media hosted on S3 set the ``DEFAULT_FILE_STORAGE`` variable accordingly.
-- If you want to access the PostgreSQL database from the host system, set ``DB_PORT`` to the desired port number.
-  5432 is the standard port number. If you run PosgreSQL on your host system, you may want to set another port number.
-  If this variable is empty (the default), the PosgreSQL instance in the container is only reachable within docker, but
-  not from outside.
-
+- To deploy this project in testing mode (recommended) set the environment variable ``DEBUG`` to ``True`` in your hosting environment.
+- Be aware that if ``DEBUG`` is false, django requires you to whitelist the domain. Set the env var ``DOMAIN`` to the host, i.e. ``www.domain.com`` or ``*.domain.com``.
+- You can set the env var ``DEFAULT_STORAGE_DSN`` to something meaningful (i.e. for s3 file storage)
 
 Deployment Commands
 ===================
