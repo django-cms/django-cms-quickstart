@@ -76,10 +76,10 @@ Updating requirements
 
 The project uses a django best practise two step approach, freezing all dependencies with pip-tools. Here is how to update requirements:
 
-1. Change `requirements.in` according to your needs. There is no need to pin the package versions here unless you have a good reason (i.e. known incompatibilities)
-2. Run `docker compose run --rm web pip-compile requirements.in >> requirements.txt`
-3. `requirements.txt` should now have changed
-4. Rebuild the container `docker compose build web` and restart `docker compose up -d`
+1. Change ``requirements.in`` according to your needs. There is no need to pin the package versions here unless you have a good reason (i.e. known incompatibilities)
+2. Run ``docker compose run --rm web pip-compile requirements.in >> requirements.txt``
+3. ``requirements.txt`` should now have changed
+4. Rebuild the container ``docker compose build web`` and restart ``docker compose up -d``
 
 Features
 ########
