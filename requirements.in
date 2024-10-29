@@ -24,7 +24,8 @@ djangocms-text
 
 
 # optional django CMS frontend
-djangocms-frontend
+git+https://github.com/fsbraun/djangocms-frontend@feat/djangocms-link-support#egg=djangocms-frontend
+git+https://github.com/django-cms/djangocms-link@feat/url-mngr#egg=djangocms-link
 
 django-filer
 
