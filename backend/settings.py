@@ -57,6 +57,9 @@ INSTALLED_APPS = [
     'djangocms_alias',
     'parler',
 
+    # links
+    'djangocms-link',
+    
     # the next-gen text editor - optional, but used in most projects
     'djangocms_text',
 
