@@ -4,6 +4,9 @@
 #
 #    pip-compile --output-file=requirements.txt requirements.in
 #
+
+git+https://github.com/fsbraun/djangocms-blog.git@develop-4#egg=djangocms-blog
+
 asgiref==3.8.1
     # via django
 boto3==1.35.50
