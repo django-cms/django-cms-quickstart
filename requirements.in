@@ -2,7 +2,7 @@
 # pip-compile -U --resolver=backtracking
 
 boto3
-psycopg2
+psycopg2-binary
 uwsgi
 
 django<=6
@@ -26,6 +26,9 @@ djangocms-text
 # optional django CMS frontend
 git+https://github.com/fsbraun/djangocms-frontend@feat/djangocms-link-support#egg=djangocms-frontend
 git+https://github.com/django-cms/djangocms-link@feat/url-mngr#egg=djangocms-link
+
+# optional for testing of the blog functionalities and for testing djangocms-link
+git+https://github.com/fsbraun/djangocms-blog.git@develop-4#egg=djangocms-blog
 
 django-filer
 
