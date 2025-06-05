@@ -17,7 +17,7 @@ djangocms-versioning>=2.0.0
 djangocms-alias>=2.0.0
 
 # optional, but used in most projects
-djangocms-admin-style>=3.2.2
+djangocms-simple-admin-style
 
 # the next-gen text editor
 djangocms-text
