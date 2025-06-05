@@ -60,6 +60,9 @@ INSTALLED_APPS = [
     # the next-gen text editor - optional, but used in most projects
     'djangocms_text',
 
+    # link support
+    'djangocms_link',
+
     # optional django CMS frontend modules
     'djangocms_frontend',
     'djangocms_frontend.contrib.accordion',
