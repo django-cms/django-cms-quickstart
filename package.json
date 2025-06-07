@@ -1,0 +1,24 @@
+{
+  "name": "django-cms-quickstart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mtelly/django-cms-quickstart.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Mtelly/django-cms-quickstart/issues"
+  },
+  "homepage": "https://github.com/Mtelly/django-cms-quickstart#readme",
+  "dependencies": {
+    "cypress": "^14.4.1"
+  }
+}

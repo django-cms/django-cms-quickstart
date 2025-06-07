@@ -21,3 +21,6 @@ db.sqlite3
 
 .idea/
 .env
+
+# Cypress
+node_modules/
