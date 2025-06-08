@@ -8,12 +8,8 @@ it('Log in djangoCMS', () => {
 
     cy.visit('/');
 
-    cy.get('#id_username')
-        .type(userName);
-
-    cy.get('#id_password')
-        .type(password);
-
-    cy.contains('Log in')
-    .click();
+    cy.get('#branding h1')
+    .should('have.text','Django administration');
+    
+    cy.login(userName, password);
 });
