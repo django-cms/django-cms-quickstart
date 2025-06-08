@@ -27,11 +27,7 @@ import LoginPage from '../pages/LoginPage';
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 
-Cypress.Commands.add('login', (userName, password) => { 
-    // cy.get('#id_username').type(userName);
-    // cy.get('#id_password').type(password);
-    // cy.contains('Log in').click();
-
+Cypress.Commands.add('login', (userName, password) => {
     LoginPage.visit();
     LoginPage.fillUsername(userName);
     LoginPage.fillPassword(password);
