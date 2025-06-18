@@ -30,3 +30,5 @@ django-filer
 
 
 pip-tools  # needed for compilation of this file into requirements.txt, see start of file
+
+git+https://github.com/fsbraun/djangocms4-utilities
