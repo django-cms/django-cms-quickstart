@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     'filer',
     'easy_thumbnails',
 
+    'djangocms_transfer',
+
     # the default publishing implementation - optional, but used in most projects
     'djangocms_versioning',
 
