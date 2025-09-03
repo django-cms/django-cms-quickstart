@@ -22,6 +22,8 @@ djangocms-admin-style>=3.2.2
 # the next-gen text editor
 djangocms-text
 
+# required to populate demo content
+djangocms-transfer>=2.0.0
 
 # optional django CMS frontend
 djangocms-frontend

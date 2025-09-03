@@ -68,6 +68,20 @@ to see sections that can be removed - in each case, the section is noted with a 
 
 Options are also available for using Postgres/MySQL, uWSGI/Gunicorn/Guvicorn, etc.
 
+Loading with pre-built page on install
+======================================
+
+You can load demo contents into the project to quickly find out how to use
+``django-cms`` and ``djangocms-frontend`` to add pages.
+
+Here is how to use the command:
+1. To list the available files in the ``democontent`` folder.
+   Run ``docker compose run --rm web python manage.py democontent``
+
+2. To add a page. Run ``docker compose run --rm web python manage.py democontent <FILE_PATH>``
+
+3. To add a page by force. Run ``docker compose run --rm web python manage.py democontent <FILE_PATH> --force``
+
 Updating requirements
 =====================
 

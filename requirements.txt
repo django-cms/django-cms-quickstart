@@ -52,6 +52,7 @@ django-cms==5.0.1
     #   djangocms-attributes-field
     #   djangocms-frontend
     #   djangocms-link
+    #   djangocms-transfer
     #   djangocms-versioning
 django-entangled==0.6.2
     # via djangocms-frontend
@@ -90,6 +91,8 @@ djangocms-frontend==2.1.2
 djangocms-link==5.0.1
     # via djangocms-frontend
 djangocms-text==0.9.1
+    # via -r requirements.in
+djangocms-transfer==2.0.0
     # via -r requirements.in
 djangocms-versioning==2.3.2
     # via -r requirements.in
