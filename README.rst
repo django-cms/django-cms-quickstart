@@ -71,7 +71,7 @@ Options are also available for using Postgres/MySQL, uWSGI/Gunicorn/Guvicorn, et
 Loading with pre-built page on install
 ======================================
 
-It is now possible to load the project with contents which shows how to use
+You can load demo contents into the project to quickly find out how to use
 ``django-cms`` and ``djangocms-frontend`` to add pages.
 
 Here is how to use the command:
