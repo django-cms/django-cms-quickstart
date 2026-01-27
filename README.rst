@@ -5,7 +5,8 @@ django CMS quickstart
 #####################
 
 - A dockerised django CMS project intended to be run locally in Docker on your own machine or on a Docker-based cloud, such as `Divio <https://www.divio.com/>`_ 
-- This version uses Python 3.11 and the most up-to-date versions of Django 4.2, and django CMS 4.1.0
+- This branch runs Django via ASGI (async-capable) using Uvicorn.
+- This version uses Python 3.12+ and up-to-date versions of Django and django CMS.
 - This project is endorsed by the `django CMS Association <https://www.django-cms.org/en/about-us/>`_. That means that it is officially accepted by the dCA as being in line with our roadmap vision and development/plugin policy. Join us on `Slack <https://www.django-cms.org/slack/>`_ for more information or questions.
 - The documentation for  django CMS can be found here: https://docs.django-cms.org/
 
@@ -38,6 +39,8 @@ Local Setup
 
 Then open http://django-cms-quickstart.127.0.0.1.nip.io:8000 (or just http://127.0.0.1:8000) in your browser.
 
+This setup serves the project via Uvicorn (ASGI). If you want auto-reload for local development, add ``--reload`` to the Uvicorn command in ``compose.yaml``.
+
 You can stop the server with ``docker compose stop`` without destroying the containers and restart it with
 ``docker compose start``.
 
@@ -67,6 +70,11 @@ these; they're optional. If you don't want to use them, read through the ``setti
 to see sections that can be removed - in each case, the section is noted with a comment containing the word 'optional'.
 
 Options are also available for using Postgres/MySQL, uWSGI/Gunicorn/Guvicorn, etc.
+
+ASGI / async
+============
+
+This branch is configured to start the app server with Uvicorn, pointing at the Django ASGI application (``backend.asgi:application``). Django remains fully compatible with synchronous code, while also supporting async views/middleware where applicable.
 
 Loading with pre-built page on install
 ======================================

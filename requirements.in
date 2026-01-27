@@ -2,8 +2,8 @@
 # pip-compile -U --resolver=backtracking
 
 boto3
-psycopg2
-uwsgi
+psycopg>=3
+uvicorn
 
 django<=6
 dj-database-url

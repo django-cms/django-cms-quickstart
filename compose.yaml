@@ -10,7 +10,7 @@ services:
       - ".:/app:rw"
       - "./data:/data:rw"
     # the default command to run whenever the container is launched
-    command: python manage.py runserver 0.0.0.0:80
+    command: uvicorn backend.asgi:application --host 0.0.0.0 --port 80
     # the URL 'postgres' or 'mysql' will point to the application's db service
     networks:
       - djangocmsnet
