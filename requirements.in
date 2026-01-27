@@ -12,12 +12,12 @@ whitenoise
 easy-thumbnails
 
 # key requirements for django CMS
-django-cms>=4.1.0
+django-cms @ git+https://github.com/django-cms/django-cms@feat/async-apphooks
 djangocms-versioning>=2.0.0
 djangocms-alias>=2.0.0
 
 # optional, but used in most projects
-djangocms-admin-style>=3.2.2
+djangocms-simple-admin-style
 
 # the next-gen text editor
 djangocms-text
@@ -28,7 +28,15 @@ djangocms-transfer>=2.0.0
 # optional django CMS frontend
 djangocms-frontend
 
+# optional djangocms-stories
+djangocms-stories @ git+https://github.com/django-cms/djangocms-stories@main
+django-taggit
+django-taggit-templatetags
+django-meta
+
 django-filer
 
+# MCP server
+django-ask-jenna @ git+https://github.com/fsbraun/django-ask-jenna@main
 
 pip-tools  # needed for compilation of this file into requirements.txt, see start of file

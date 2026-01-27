@@ -29,7 +29,7 @@ INSTALLED_APPS = [
     'backend',
 
     # optional, but used in most projects
-    'djangocms_admin_style',
+    'djangocms_simple_admin_style',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -83,6 +83,14 @@ INSTALLED_APPS = [
     'djangocms_frontend.contrib.image',
     'djangocms_frontend.contrib.tabs',
     'djangocms_frontend.contrib.utilities',
+
+    'djangocms_stories',
+    'taggit',
+    'taggit_autosuggest',
+    'meta',
+    'sortedm2m',
+
+    'cms_mcp',
 ]
 
 MIDDLEWARE = [
@@ -185,6 +193,7 @@ LANGUAGE_CODE = 'en'
 
 LANGUAGES = [
     ('en', 'English'),
+    ('de', 'Deutsch'),
 ]
 
 TIME_ZONE = 'UTC'
