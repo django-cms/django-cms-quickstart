@@ -4,7 +4,7 @@
 django CMS quickstart
 #####################
 
-- A dockerised django CMS project intended to be run locally in Docker on your own machine or on a Docker-based cloud, such as `Divio <https://www.divio.com/>`_ 
+- A dockerised django CMS project intended to be run locally in Docker on your own machine or on a Docker-based cloud, such as `Divio <https://www.divio.com/>`_
 - This branch runs Django via ASGI (async-capable) using Uvicorn.
 - This version uses Python 3.12+ and up-to-date versions of Django and django CMS.
 - This project is endorsed by the `django CMS Association <https://www.django-cms.org/en/about-us/>`_. That means that it is officially accepted by the dCA as being in line with our roadmap vision and development/plugin policy. Join us on `Slack <https://www.django-cms.org/slack/>`_ for more information or questions.
