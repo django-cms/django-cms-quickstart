@@ -20,9 +20,9 @@ attrs==25.4.0
     #   referencing
 beautifulsoup4==4.14.3
     # via django-ask-jenna
-boto3==1.42.35
+boto3==1.42.36
     # via -r requirements.in
-botocore==1.42.35
+botocore==1.42.36
     # via
     #   boto3
     #   s3transfer
@@ -40,7 +40,7 @@ click==8.3.1
     # via
     #   pip-tools
     #   uvicorn
-cryptography==46.0.3
+cryptography==46.0.4
     # via pyjwt
 cssselect2==0.8.0
     # via svglib
@@ -72,7 +72,7 @@ django-classy-tags==4.1.0
     # via
     #   django-cms
     #   django-sekizai
-django-cms @ git+https://github.com/django-cms/django-cms@feat/async-apphooks
+django-cms @ git+https://github.com/django-cms/django-cms@main
     # via
     #   -r requirements.in
     #   django-ask-jenna

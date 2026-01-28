@@ -39,7 +39,8 @@ Local Setup
 
 Then open http://django-cms-quickstart.127.0.0.1.nip.io:8000 (or just http://127.0.0.1:8000) in your browser.
 
-This setup serves the project via Uvicorn (ASGI). If you want auto-reload for local development, add ``--reload`` to the Uvicorn command in ``compose.yaml``.
+This setup serves the project via Uvicorn (ASGI). If you want auto-reload for local development, add
+``--reload`` to the Uvicorn command in ``compose.yaml``.
 
 You can stop the server with ``docker compose stop`` without destroying the containers and restart it with
 ``docker compose start``.
