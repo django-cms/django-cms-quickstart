@@ -75,6 +75,7 @@ You can load demo contents into the project to quickly find out how to use
 ``django-cms`` and ``djangocms-frontend`` to add pages.
 
 Here is how to use the command:
+
 1. To list the available files in the ``democontent`` folder.
    Run ``docker compose run --rm web python manage.py democontent``
 
