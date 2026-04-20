@@ -126,7 +126,7 @@ pillow==11.2.1
     #   djangocms-text
     #   easy-thumbnails
     #   reportlab
-pip-tools==7.4.1
+pip-tools==7.5.2
     # via -r requirements.in
 psycopg2==2.9.10
     # via -r requirements.in

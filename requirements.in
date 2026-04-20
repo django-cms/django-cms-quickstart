@@ -30,5 +30,4 @@ djangocms-frontend
 
 django-filer
 
-
-pip-tools  # needed for compilation of this file into requirements.txt, see start of file
+pip-tools>=7.5.2  # needed for compilation of this file into requirements.txt, see start of file
