@@ -5,25 +5,26 @@ boto3
 psycopg2
 uwsgi
 
-django<=6
+django>=5.2,<6.0  # Django 5.2 LTS
 dj-database-url
 django-storage-url
 whitenoise
 easy-thumbnails
 
 # key requirements for django CMS
-django-cms>=4.1.0
-djangocms-versioning>=2.0.0
-djangocms-alias>=2.0.0
+django-cms>=5.1,<5.2
+django-treebeard<5
+djangocms-versioning>=2.7.0
+djangocms-alias>=3.2.0
 
 # optional, but used in most projects
-djangocms-admin-style>=3.2.2
+djangocms-simple-admin-style
 
 # the next-gen text editor
-djangocms-text
+djangocms-text>=1.0
 
 # required to populate demo content
-djangocms-transfer>=2.0.0
+djangocms-transfer>=2.0.1
 
 # optional django CMS frontend
 djangocms-frontend
